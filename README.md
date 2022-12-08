@@ -4,7 +4,8 @@ Machine Learning with Javascript by Stephen Grider
 
 ## Folder structure
 
--
+- 01-introduction
+  - plinko
 
 ## Details
 
