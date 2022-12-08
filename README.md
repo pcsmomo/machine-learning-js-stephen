@@ -36,4 +36,16 @@ Machine Learning with Javascript by Stephen Grider
 2. Regression : Arrange
    - The value of our labels belong to a continuous set
 
+### 8. Identifying Relevant Data
+
+![Plinko](./images/plinko.png)
+
+| Feature         | Column                 |
+| --------------- | ---------------------- |
+| Drop Position   | Bucket a ball lands in |
+| Ball Bounciness |                        |
+| Ball Size       |                        |
+
+> Change one of Features -> Will probably change Column
+
 </details>
