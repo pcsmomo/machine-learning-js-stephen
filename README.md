@@ -4,6 +4,9 @@ Machine Learning with Javascript by Stephen Grider
 
 ## Folder structure
 
+- ../resources
+  - MLKits - starter kits
+  - MLCasts - complete code
 - 01-introduction
   - plinko
 
