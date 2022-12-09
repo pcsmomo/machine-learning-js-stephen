@@ -51,4 +51,14 @@ Machine Learning with Javascript by Stephen Grider
 
 > Change one of Features -> Will probably change Column
 
+### 11. What Type of Problem?
+
+- we choose `Classification` -> Bucket #1 ~ #10
+- Algorithm: K-Nearest Neighbor (knn)
+  - "Birds of a feather flock together"
+
+### 12. How K-Nearest Neighbor Works
+
+N-Nearest Neighbor (with one independent variable)
+
 </details>
