@@ -65,4 +65,12 @@ N-Nearest Neighbor (with one independent variable)
 
 [lodash doc](https://lodash.com/docs)
 
+### 17. Interpreting Bad Results
+
+1. Adjust the parameters of the analysis
+   `const k = 3;`
+2. Add more features to explain the analysis
+3. Change the prediction point
+4. Accept that maybe there isn't a good correlation
+
 </details>
