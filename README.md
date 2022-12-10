@@ -61,4 +61,8 @@ Machine Learning with Javascript by Stephen Grider
 
 N-Nearest Neighbor (with one independent variable)
 
+### 13. Lodash Review
+
+[lodash doc](https://lodash.com/docs)
+
 </details>
