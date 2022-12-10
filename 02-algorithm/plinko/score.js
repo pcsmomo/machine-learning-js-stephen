@@ -7,12 +7,21 @@ function onScoreUpdate(dropPosition, bounciness, size, bucketLabel) {
 }
 
 function runAnalysis() {
+  // debugger;
   console.log('the length of data: ', outputs.length);
 
-  // Write code here to analyze stuff
-  const bucket = knn(outputs);
+  const [testSet, trainingSet] = splitDataset(outputs, 10);
 
-  console.log('Your point will probably fall into', bucket);
+  console.log(
+    `testSet: ${testSet.length}, trainingSet: ${trainingSet.length} `
+  );
+
+  for (let i = 0; i < testSet.length; i++) {
+    const bucket = knn(trainingSet, testSet[i][0]);
+    console.log(bucket, testSet[i][3]);
+  }
+
+  // console.log('Your point will probably fall into', bucket);
 }
 
 function knn(data, point) {
@@ -36,7 +45,9 @@ function distance(pointA, pointB) {
 function splitDataset(data, testCount) {
   const shuffled = _.shuffle(data);
 
+  // after learning, we could verify the result comparing to this testSet
   const testSet = _.slice(shuffled, 0, testCount); // to testCount
+  // the algorithm actually guesses after learning trainingSet
   const trainingSet = _.slice(shuffled, testCount); // from testCount to the end
 
   return [testSet, trainingSet];
