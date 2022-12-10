@@ -29,3 +29,12 @@ function runAnalysis() {
 function distance(point) {
   return Math.abs(point - predictionPoint);
 }
+
+function splitDataset(data, testCount) {
+  const shuffled = _.shuffle(data);
+
+  const testSet = _.slice(shuffled, 0, testCount); // to testCount
+  const trainingSet = _.slice(shuffled, testCount); // from testCount to the end
+
+  return [testSet, trainingSet];
+}
