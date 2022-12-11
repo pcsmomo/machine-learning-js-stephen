@@ -79,4 +79,26 @@ Start "2. Add more features to explain the analysis"
 
 Pythagorean Theorem : a^2 + b^2 = c^2
 
+### 26. Multi-Dimensional KNN
+
+Pythagorean Theorem \
+`C = (A ** 2 + B ** 2) ** 0.5`
+
+```js
+const outputs = [
+  [40, 0.5, 16, 1],
+  [150, 0.52, 16, 2],
+  [350, 0.55, 16, 2],
+  [425, 0.53, 16, 3]
+];
+const target = [323, 0.52, 16, 2];
+
+C ** 2 = A ** 2 + B ** 2
+C = (A ** 2 + B ** 2) ** 0.5
+C = ((350 - 323) ** 2) + ((0.55 - 0.52) ** 2) ** 0.5
+```
+
+3D Pythagorean Theorem : a^2 + b^2 = c^2
+`D = (A ** 2 + B ** 2 + C ** 2) ** 0.5`
+
 </details>
