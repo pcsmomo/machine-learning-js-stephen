@@ -56,7 +56,22 @@ function knn(data, point, k) {
 }
 
 function distance(pointA, pointB) {
-  return Math.abs(pointA - pointB);
+  // pointA = 300, pointB = 350
+  // pointA = [300, .5, 16], pointB = [350, .55, 16]
+  // return Math.abs(pointA - pointB);
+
+  // pythagorean-theorem
+  // const pointA = [1, 1];
+  // const pointB = [4, 5];
+  const result =
+    _.chain(pointA)
+      .zip(pointB)
+      .map(([a, b]) => (a - b) ** 2)
+      .sum()
+      .value() ** 0.5;
+
+  // console.log(result);
+  return result;
 }
 
 function splitDataset(data, testCount) {
