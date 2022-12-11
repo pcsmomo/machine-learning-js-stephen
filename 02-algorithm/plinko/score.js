@@ -13,6 +13,23 @@ function runAnalysis() {
   const testSetSize = 10;
   const [testSet, trainingSet] = splitDataset(outputs, testSetSize);
 
+  // Get the accuracy
+  // let numberCorrect = 0;
+  // console.log(
+  //   `testSet: ${testSet.length}, trainingSet: ${trainingSet.length} `
+  // );
+
+  // for (let i = 0; i < testSet.length; i++) {
+  //   const bucket = knn(trainingSet, testSet[i][0]);
+  //   const actualBucket = testSet[i][3];
+  //   if (bucket === actualBucket) {
+  //     numberCorrect++;
+  //   }
+  //   console.log(bucket, actualBucket);
+  // }
+
+  // console.log('Accuracy:', numberCorrect / testSetSize);
+
   // Get the accuracy with lodash
   const accuracy = _.chain(testSet)
     .filter(testPoint => knn(trainingSet, testPoint[0]) === testPoint[3])
