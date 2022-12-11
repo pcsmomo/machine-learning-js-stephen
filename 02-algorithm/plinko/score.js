@@ -1,5 +1,4 @@
 const outputs = [];
-const k = 3;
 
 function onScoreUpdate(dropPosition, bounciness, size, bucketLabel) {
   // Ran every time a balls drops into a bucket
@@ -10,7 +9,7 @@ function runAnalysis() {
   // debugger;
   console.log('the length of data: ', outputs.length);
 
-  const testSetSize = 10;
+  const testSetSize = 100;
   const [testSet, trainingSet] = splitDataset(outputs, testSetSize);
 
   // Get the accuracy
@@ -30,17 +29,19 @@ function runAnalysis() {
 
   // console.log('Accuracy:', numberCorrect / testSetSize);
 
-  // Get the accuracy with lodash
-  const accuracy = _.chain(testSet)
-    .filter(testPoint => knn(trainingSet, testPoint[0]) === testPoint[3])
-    .size()
-    .divide(testSetSize)
-    .value();
+  _.range(1, 20).forEach(k => {
+    // Get the accuracy with lodash
+    const accuracy = _.chain(testSet)
+      .filter(testPoint => knn(trainingSet, testPoint[0], k) === testPoint[3])
+      .size()
+      .divide(testSetSize)
+      .value();
 
-  console.log('Accuracy:', accuracy);
+    console.log('For k of', k, 'Accuracy:', accuracy);
+  });
 }
 
-function knn(data, point) {
+function knn(data, point, k) {
   return _.chain(data)
     .map(row => [distance(row[0], point), row[3]])
     .sortBy(row => row[0])
