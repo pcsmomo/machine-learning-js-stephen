@@ -73,4 +73,10 @@ N-Nearest Neighbor (with one independent variable)
 3. Change the prediction point
 4. Accept that maybe there isn't a good correlation
 
+### 25. Updating KNN for Multiple Features
+
+Start "2. Add more features to explain the analysis"
+
+Pythagorean Theorem : a^2 + b^2 = c^2
+
 </details>
