@@ -9,6 +9,9 @@ Machine Learning with Javascript by Stephen Grider
   - MLCasts - complete code
 - 01-introduction
   - plinko
+- 02-algorithm
+  - plinko : using lodash
+- 03-tensorflow
 
 ## Details
 
@@ -152,5 +155,36 @@ bounciness and size are not
   - Similar api to numpy - popular Python numerical lib
 - Cons
   - Still in active development
+
+### 38. Tensor Shape and Dimension
+
+[TesorFlow.js Doc](https://js.tensorflow.org/api/4.0.0/)
+
+- `[]` : 1 Dimentional
+- `[[]]` : 2 Dimentional
+- `[[[]]]` : 3 Dimentional
+
+#### Shape
+
+```js
+// 1 dimentional
+[5, 10, 17].length -> [3] shape
+
+// 2 dimentional
+[
+  [5, 10, 17],
+  [5, 10, 17].length,
+].length -> [2, 3] shape
+
+// 3 dimentional
+[
+  [
+    [5, 10, 17].length,
+  ].length
+].length -> [1, 1, 3] shape
+```
+
+> 2D is the most important dimention we will work with \
+> [# rows, # columns] -> [2, 3]
 
 </details>
