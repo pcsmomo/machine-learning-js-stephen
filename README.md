@@ -101,4 +101,8 @@ C = ((350 - 323) ** 2) + ((0.55 - 0.52) ** 2) ** 0.5
 3D Pythagorean Theorem : a^2 + b^2 = c^2
 `D = (A ** 2 + B ** 2 + C ** 2) ** 0.5`
 
+### 30. Feature Normalization
+
+`Normalized Dataset = (FeatureValue - min) / (max - min)`
+
 </details>
