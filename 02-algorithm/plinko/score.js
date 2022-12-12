@@ -10,7 +10,7 @@ function runAnalysis() {
   console.log('the length of data: ', outputs.length);
 
   const testSetSize = 100;
-  const [testSet, trainingSet] = splitDataset(outputs, testSetSize);
+  const [testSet, trainingSet] = splitDataset(minMax(outputs, 3), testSetSize);
 
   // Get the accuracy
   // let numberCorrect = 0;
