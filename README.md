@@ -122,4 +122,35 @@ score.js:47 For feature of 2 accuracy: 0.03
 dropPosition is a good selection feature \
 bounciness and size are not
 
+## Section 3: Onwards to Tensorflow JS!
+
+### 36. Let's Get Our Bearings
+
+- Features vs Labels
+- Test vs Trainnig sets of data
+- Feature Normalization
+- Common data structures (arrays of arrays)
+- Feature Selection
+
+#### Lodash
+
+- Pros
+  - Methods for just about everything we need
+  - Excellent API design (especially chain!)
+  - Skills transferrable to other JS projects
+- Cons
+  - Extremely slow (relatively)
+  - Not 'numbers' focused
+  - Some things are awkward (getting a column of values)
+
+#### Tensorflow JS
+
+- Pros
+  - Similar API to Lodash
+  - Extremely fast for numeric calculations
+  - Has a 'low level' linear algebra API + higher level API for ML
+  - Similar api to numpy - popular Python numerical lib
+- Cons
+  - Still in active development
+
 </details>
