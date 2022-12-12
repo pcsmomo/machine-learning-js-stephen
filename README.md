@@ -105,4 +105,6 @@ C = ((350 - 323) ** 2) + ((0.55 - 0.52) ** 2) ** 0.5
 
 `Normalized Dataset = (FeatureValue - min) / (max - min)`
 
+### 33. Feature Selection with KNN
+
 </details>

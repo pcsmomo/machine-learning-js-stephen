@@ -10,7 +10,7 @@ function runAnalysis() {
   console.log('the length of data: ', outputs.length);
 
   const testSetSize = 100;
-  const [testSet, trainingSet] = splitDataset(minMax(outputs, 3), testSetSize);
+  const k = 10;
 
   // Get the accuracy
   // let numberCorrect = 0;
@@ -29,17 +29,22 @@ function runAnalysis() {
 
   // console.log('Accuracy:', numberCorrect / testSetSize);
 
-  _.range(1, 20).forEach(k => {
+  _.range(0, 3).forEach(feature => {
+    // feature = 0 | 1 | 2
+    const data = _.map(outputs, row => [row[feature], _.last(row)]);
+    const [testSet, trainingSet] = splitDataset(minMax(data, 1), testSetSize);
+
     // Get the accuracy with lodash
     const accuracy = _.chain(testSet)
       .filter(
-        testPoint => knn(trainingSet, _.initial(testPoint), k) === testPoint[3]
+        testPoint =>
+          knn(trainingSet, _.initial(testPoint), k) === _.last(testPoint)
       )
       .size()
       .divide(testSetSize)
       .value();
 
-    console.log('For k of', k, 'Accuracy:', accuracy);
+    console.log('For feature of', feature, 'accuracy:', accuracy);
   });
 }
 
