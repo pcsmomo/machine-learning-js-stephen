@@ -107,4 +107,19 @@ C = ((350 - 323) ** 2) + ((0.55 - 0.52) ** 2) ** 0.5
 
 ### 33. Feature Selection with KNN
 
+Not all features give us a good guess. \
+Some features are not giving us good accuracy
+
+### 35. Evaluating Different Feature Values
+
+```js
+the length of data:  1596
+score.js:47 For feature of 0 accuracy: 0.32
+score.js:47 For feature of 1 accuracy: 0.15
+score.js:47 For feature of 2 accuracy: 0.03
+```
+
+dropPosition is a good selection feature \
+bounciness and size are not
+
 </details>
