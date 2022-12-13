@@ -245,4 +245,9 @@ const housePrice = [[200], [250]];
 
 distance = ((lon - lon) ** 2 + (lat - lat) ** 2) \*\* 0.5
 
+### 53. Sorting Tensors
+
+- [tf.unstack](https://js.tensorflow.org/api/latest/?utm_source=www.tensorflow.org&utm_medium=referral&_gl=1*d01f2p*_ga*NDQxMTA5NTQ4LjE2NzA2MjMzMzQ.*_ga_W0YLR4190T*MTY3MDkxMjgzMi40LjEuMTY3MDkxMjgzMy4wLjAuMA..#unstack)
+- make the tensor data to array
+
 </details>

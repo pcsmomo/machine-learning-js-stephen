@@ -21,5 +21,20 @@ const distances = features.sub(predictionPoint).pow(2).sum(1).pow(0.5);
 distances.print();
 
 // 52. Maintaining Order Relationships
-distances.expandDims(1).concat(labels, 1);
-distances.expandDims(1).concat(labels, 1).print();
+const pairedData = distances.expandDims(1).concat(labels, 1);
+pairedData.print();
+
+// 53. Sorting Tensors
+// pairedData.unstack();
+// pairedData.unstack()[0].print();
+// pairedData.unstack()[1].print();
+// pairedData.unstack()[2].print();
+// pairedData.unstack()[3].print();
+
+const sorted = pairedData
+  .unstack()
+  .sort((a, b) => (a.arraySync()[0] > b.arraySync()[0] ? 1 : -1)); // ascending
+sorted[0].print();
+sorted[1].print();
+sorted[2].print();
+sorted[3].print();
