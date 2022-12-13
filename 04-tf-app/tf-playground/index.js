@@ -15,5 +15,11 @@ features.print();
 labels.print();
 predictionPoint.print();
 
+// 51. KNN with Tensorflow
 // distance = ((lon - lon) ** 2 + (lat - lat) ** 2) \*\* 0.5
-features.sub(predictionPoint).pow(2).sum(1).pow(0.5);
+const distances = features.sub(predictionPoint).pow(2).sum(1).pow(0.5);
+distances.print();
+
+// 52. Maintaining Order Relationships
+distances.expandDims(1).concat(labels, 1);
+distances.expandDims(1).concat(labels, 1).print();
