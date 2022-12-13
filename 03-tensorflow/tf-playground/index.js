@@ -7,9 +7,9 @@ console.log(data.shape);
 
 // Elementwise Operation
 const addedData = data.add(otherData);
-console.log(data);
-console.log(otherData);
-console.log(addedData);
+data.print();
+otherData.print();
+addedData.print();
 
 data.sub(otherData);
 data.mul(otherData);
