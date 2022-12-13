@@ -220,4 +220,25 @@ Brodcasting works when
 - Take the top K records
 - Average the label value of those top K records
 
+### 50. A Change in Data Structure
+
+#### Differences between plinko and house-price
+
+```js
+// plinko
+// features and bucket were in the same structure
+[
+  [350, 0.55, 16, 2],
+  [350, 0.55, 16, 2]
+];
+
+// house-price
+// features and labels are separated
+const features = [
+  [84, 83],
+  [84.1, 85]
+];
+const housePrice = [[200], [250]];
+```
+
 </details>
