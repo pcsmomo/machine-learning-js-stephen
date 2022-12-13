@@ -19,3 +19,12 @@ const data2 = tf.tensor([1, 2, 3]);
 const otherData2 = tf.tensor([4]);
 // Broadcasting Operator
 const brodcastedData = data.add(otherData2);
+
+// 44. Tensor Accessors
+const data44 = tf.tensor([
+  [10, 20, 30],
+  [40, 50, 60]
+]);
+
+console.log(data44.arraySync()[1][1]); // 50
+data44.array().then(arr => console.log(arr[0][1])); // 20
