@@ -206,4 +206,18 @@ Brodcasting works when
   - [2, 3, 2]
   - [ , 2, 1]
 
+## Section 4: Applications of Tensorflow
+
+### 49. KNN with Regression
+
+- Which bucket will a ball go into? -> Classification
+- What is the price of a house? -> Regressions
+
+#### KNN Algorithm
+
+- Find distance between features and prediction point
+- Sort from lowest point to greatest
+- Take the top K records
+- Average the label value of those top K records
+
 </details>
