@@ -11,7 +11,11 @@ console.log(data);
 console.log(otherData);
 console.log(addedData);
 
-// Elementwise Operation
 data.sub(otherData);
 data.mul(otherData);
 data.div(otherData);
+
+const data2 = tf.tensor([1, 2, 3]);
+const otherData2 = tf.tensor([4]);
+// Broadcasting Operator
+const brodcastedData = data.add(otherData2);

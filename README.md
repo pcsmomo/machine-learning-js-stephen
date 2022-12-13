@@ -187,4 +187,23 @@ bounciness and size are not
 > 2D is the most important dimention we will work with \
 > [# rows, # columns] -> [2, 3]
 
+### 41. Broadcasting Operations
+
+Brodcasting works when
+
+- Take shape of both tensor -> From right to left, the shapes are equal or one is '1'
+
+- Shape[3] and Shape[1] => O
+  - [3]
+  - [1]
+- Shape[2, 3] and Shape [2, 1] => O
+  - [2, 3]
+  - [2, 1]
+- Shape[2, 3, 2] and Shape [3, 1] => O
+  - [2, 3, 2]
+  - [ , 3, 1]
+- Shape[2, 3, 2] and Shape [2, 1] => X
+  - [2, 3, 2]
+  - [ , 2, 1]
+
 </details>
