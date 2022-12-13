@@ -1,4 +1,3 @@
-const { kernel_impls } = require('@tensorflow/tfjs-node');
 const tf = require('@tensorflow/tfjs-node');
 
 // 47. Summing Values Along an Axis
