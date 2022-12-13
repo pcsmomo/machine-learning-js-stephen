@@ -19,4 +19,14 @@ const playerData = tf.tensor([
 jumpData.sum(1).print(); // sum rows
 // jumpData.sum(0).print();  // sum columns
 
-jumpData.sum(1).concat(playerData).print();
+console.log();
+console.log(jumpData.shape);
+console.log(jumpData.sum(1).shape);
+
+// way 1
+jumpData.sum(1, true).print();
+jumpData.sum(1, true).concat(playerData, 1).print();
+
+// way 2
+jumpData.sum(1).expandDims(1).print();
+jumpData.sum(1).expandDims(1).concat(playerData, 1).print();
