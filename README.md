@@ -241,4 +241,8 @@ const features = [
 const housePrice = [[200], [250]];
 ```
 
+### 51. KNN with Tensorflow
+
+distance = ((lon - lon) ** 2 + (lat - lat) ** 2) \*\* 0.5
+
 </details>

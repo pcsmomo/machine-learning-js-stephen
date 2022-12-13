@@ -14,3 +14,6 @@ const predictionPoint = tf.tensor([-121, 47]);
 features.print();
 labels.print();
 predictionPoint.print();
+
+// distance = ((lon - lon) ** 2 + (lat - lat) ** 2) \*\* 0.5
+features.sub(predictionPoint).pow(2).sum(1).pow(0.5);
