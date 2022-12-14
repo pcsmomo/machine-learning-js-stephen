@@ -3,9 +3,17 @@ const tf = require('@tensorflow/tfjs');
 const loadCSV = require('./load-csv');
 
 function knn(features, labels, predictionPoint, k) {
+  const { mean, variance } = tf.moments(features, 0); // each column(=features)
+
+  const scaledPrediction = predictionPoint.sub(mean).div(variance.pow(0.5));
+
   return (
+    // features
     features
-      .sub(predictionPoint)
+      .sub(mean)
+      .div(variance.pow(0.5))
+      // .sub(predictionPoint)
+      .sub(scaledPrediction)
       .pow(2)
       .sum(1)
       .pow(0.5)
@@ -35,11 +43,8 @@ labels = tf.tensor(labels);
 // testFeatures = tf.tensor(testFeatures);
 // testLabels = tf.tensor(testLabels);
 
-// let's start it with only one predictionPoint
-predictionPoint = tf.tensor(testFeatures[0]);
-
 testFeatures.forEach((testPoint, i) => {
-  const result = knn(features, labels, testPoint, 10);
+  const result = knn(features, labels, tf.tensor(testPoint), 10);
   const expectedValue = testLabels[i][0];
   const err = (expectedValue - result) / expectedValue;
   console.log('Error:', `${Math.round(err * 100)}%`);
