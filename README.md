@@ -256,4 +256,31 @@ distance = ((lon - lon) ** 2 + (lat - lat) ** 2) \*\* 0.5
 npm install --save @tensorflow/tfjs-node lodash shuffle-seed
 ```
 
+### 58. Reporting Error Percentages
+
+Initial analysis
+
+```sh
+Error: -31%
+Guess: 1421200 , Expected 1085000
+Error: -53%
+Guess: 714001.5 , Expected 466800
+Error: -10%
+Guess: 465600 , Expected 425000
+Error: -29%
+Guess: 726186 , Expected 565000
+Error: -6%
+Guess: 805070 , Expected 759000
+Error: -10%
+Guess: 562495 , Expected 512031
+Error: -11%
+Guess: 853835 , Expected 768000
+Error: 43%
+Guess: 868300 , Expected 1532500
+Error: -20%
+Guess: 244990 , Expected 204950
+Error: -6%
+Guess: 260840 , Expected 247000
+```
+
 </details>

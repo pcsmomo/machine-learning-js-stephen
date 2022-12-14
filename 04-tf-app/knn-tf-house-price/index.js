@@ -38,6 +38,10 @@ labels = tf.tensor(labels);
 // let's start it with only one predictionPoint
 predictionPoint = tf.tensor(testFeatures[0]);
 
-const result = knn(features, labels, predictionPoint, 10);
-console.log('Guess', result, testLabels[0][0]);
-// Guess 1421200 1085000
+testFeatures.forEach((testPoint, i) => {
+  const result = knn(features, labels, testPoint, 10);
+  const expectedValue = testLabels[i][0];
+  const err = (expectedValue - result) / expectedValue;
+  console.log('Error:', `${Math.round(err * 100)}%`);
+  console.log('Guess:', result, ', Expected', expectedValue);
+});
