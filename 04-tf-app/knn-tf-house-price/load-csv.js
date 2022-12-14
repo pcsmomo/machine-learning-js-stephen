@@ -23,7 +23,9 @@ module.exports = function loadCSV(
 ) {
   let data = fs.readFileSync(filename, { encoding: 'utf-8' });
   data = _.map(data.split('\n'), d => d.split(','));
-  data = _.dropRightWhile(data, val => _.isEqual(val, ['']));
+  // fs.writeFileSync('before.csv', JSON.stringify(data, null, 4));
+  data = _.dropRightWhile(data, val => _.isEqual(val, [''])); // remove the last line?
+  // fs.writeFileSync('after.csv', JSON.stringify(data, null, 4));
   const headers = _.first(data);
 
   data = _.map(data, (row, index) => {
@@ -42,8 +44,11 @@ module.exports = function loadCSV(
   });
 
   let labels = extractColumns(data, labelColumns);
+  // fs.writeFileSync('labels.txt', JSON.stringify(labels, null, 4));
   data = extractColumns(data, dataColumns);
+  // fs.writeFileSync('data.txs', JSON.stringify(data, null, 4));
 
+  // remove the first element which is [headers]
   data.shift();
   labels.shift();
 
