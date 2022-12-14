@@ -8,7 +8,6 @@ function knn(features, labels, predictionPoint, k) {
   const scaledPrediction = predictionPoint.sub(mean).div(variance.pow(0.5));
 
   return (
-    // features
     features
       .sub(mean)
       .div(variance.pow(0.5))
@@ -47,6 +46,14 @@ testFeatures.forEach((testPoint, i) => {
   const result = knn(features, labels, tf.tensor(testPoint), 10);
   const expectedValue = testLabels[i][0];
   const err = (expectedValue - result) / expectedValue;
-  console.log('Error:', `${Math.round(err * 100)}%`);
-  console.log('Guess:', result, ', Expected', expectedValue);
+  console.log(
+    'Error:',
+    `${Math.round(err * 100)}%`,
+    'Guess:',
+    result,
+    ', Expected',
+    expectedValue
+  );
+  // console.log('Error:', `${Math.round(err * 100)}%`);
+  // console.log('Guess:', result, ', Expected', expectedValue);
 });

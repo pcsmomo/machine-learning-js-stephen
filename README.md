@@ -261,26 +261,16 @@ npm install --save @tensorflow/tfjs-node lodash shuffle-seed
 Initial analysis
 
 ```sh
-Error: 15%
-Guess: 925420 , Expected 1085000
-Error: -36%
-Guess: 636235 , Expected 466800
-Error: -11%
-Guess: 472810 , Expected 425000
-Error: -23%
-Guess: 695514.3 , Expected 565000
-Error: 21%
-Guess: 600730 , Expected 759000
-Error: -12%
-Guess: 573287.2 , Expected 512031
-Error: -1%
-Guess: 773849.5 , Expected 768000
-Error: 75%
-Guess: 381626.2 , Expected 1532500
-Error: -199%
-Guess: 613175 , Expected 204950
-Error: -71%
-Guess: 423569.9 , Expected 247000
+Error: 15% Guess: 925420 , Expected 1085000
+Error: -36% Guess: 636235 , Expected 466800
+Error: -11% Guess: 472810 , Expected 425000
+Error: -23% Guess: 695514.3 , Expected 565000
+Error: 21% Guess: 600730 , Expected 759000
+Error: -12% Guess: 573287.2 , Expected 512031
+Error: -1% Guess: 773849.5 , Expected 768000
+Error: 75% Guess: 381626.2 , Expected 1532500
+Error: -199% Guess: 613175 , Expected 204950
+Error: -71% Guess: 423569.9 , Expected 247000
 ```
 
 ### 59. Normalization or Standardization?
@@ -299,26 +289,16 @@ StandardDeviation = variance \*\* 0.5
 ### 61. Applying Standardization
 
 ```sh
-Error: -15%
-Guess: 1245050 , Expected 1085000
-Error: -64%
-Guess: 765837.1 , Expected 466800
-Error: -100%
-Guess: 848675 , Expected 425000
-Error: -38%
-Guess: 781742 , Expected 565000
-Error: -3%
-Guess: 781470 , Expected 759000
-Error: 0%
-Guess: 514000 , Expected 512031
-Error: -6%
-Guess: 814785 , Expected 768000
-Error: 49%
-Guess: 774700 , Expected 1532500
-Error: -19%
-Guess: 243402.5 , Expected 204950
-Error: 2%
-Guess: 242865 , Expected 247000
+Error: -15% Guess: 1245050 , Expected 1085000
+Error: -64% Guess: 765837.1 , Expected 466800
+Error: -100% Guess: 848675 , Expected 425000
+Error: -38% Guess: 781742 , Expected 565000
+Error: -3% Guess: 781470 , Expected 759000
+Error: 0% Guess: 514000 , Expected 512031
+Error: -6% Guess: 814785 , Expected 768000
+Error: 49% Guess: 774700 , Expected 1532500
+Error: -19% Guess: 243402.5 , Expected 204950
+Error: 2% Guess: 242865 , Expected 247000
 ```
 
 </details>
