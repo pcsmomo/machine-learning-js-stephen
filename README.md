@@ -250,4 +250,10 @@ distance = ((lon - lon) ** 2 + (lat - lat) ** 2) \*\* 0.5
 - [tf.unstack](https://js.tensorflow.org/api/latest/?utm_source=www.tensorflow.org&utm_medium=referral&_gl=1*d01f2p*_ga*NDQxMTA5NTQ4LjE2NzA2MjMzMzQ.*_ga_W0YLR4190T*MTY3MDkxMjgzMi40LjEuMTY3MDkxMjgzMy4wLjAuMA..#unstack)
 - make the tensor data to a normal javascript array
 
+### 55. Moving to the Editor
+
+```sh
+npm install --save @tensorflow/tfjs-node lodash shuffle-seed
+```
+
 </details>
