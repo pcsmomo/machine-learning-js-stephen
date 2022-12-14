@@ -25,7 +25,7 @@ let { features, labels, testFeatures, testLabels } = loadCSV(
   {
     shuffle: true,
     splitTest: 10,
-    dataColumns: ['lat', 'long'],
+    dataColumns: ['lat', 'long', 'sqft_lot'],
     labelColumns: ['price']
   }
 );

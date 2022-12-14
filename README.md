@@ -283,4 +283,10 @@ Error: -6%
 Guess: 260840 , Expected 247000
 ```
 
+### 59. Normalization or Standardization?
+
+for exmaple, if one value is extremely high or low \
+Normalization wouldn't mean much. \
+Then standardization would be a better option
+
 </details>
