@@ -289,4 +289,11 @@ for exmaple, if one value is extremely high or low \
 Normalization wouldn't mean much. \
 Then standardization would be a better option
 
+### 60. Numerical Standardization with Tensorflow
+
+(Value - Aaverage) / StandardDeviation
+
+StandardDeviation = sqrt(variance)\
+StandardDeviation = variance \*\* 0.5
+
 </details>
