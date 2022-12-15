@@ -348,6 +348,16 @@ Error: -36% Guess: 279422.5 , Expected 204950
 Error: 7% Guess: 228767.5 , Expected 247000
 ```
 
+## Section 5: Getting Started with Gradient Descent
+
+### 64. Linear Regression
+
+- Pros
+  - Fast! Only train one time, then use for any prediction
+  - Uses methods that will be very important in more complicated ML
+- Cons
+  - Lot harder to understand intuitively
+
 </details>
 
 ## Tips
