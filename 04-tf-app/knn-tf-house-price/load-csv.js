@@ -24,7 +24,7 @@ module.exports = function loadCSV(
   let data = fs.readFileSync(filename, { encoding: 'utf-8' });
   data = _.map(data.split('\n'), d => d.split(','));
   // fs.writeFileSync('before.csv', JSON.stringify(data, null, 4));
-  data = _.dropRightWhile(data, val => _.isEqual(val, [''])); // remove the last line?
+  data = _.dropRightWhile(data, val => _.isEqual(val, [''])); // drop trailing commas on the right
   // fs.writeFileSync('after.csv', JSON.stringify(data, null, 4));
   const headers = _.first(data);
 
