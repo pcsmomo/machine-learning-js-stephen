@@ -369,6 +369,41 @@ But that's for only one independent variable - dependent variable
 
 > With linear regression, we can use arbitrary numbers of independent variable to one output
 
+### 66. Understanding Gradient Descent
+
+#### Methods of Solving linear regression
+
+- Ordinary Least Squares
+- Generalized Least Squares
+- ...others
+- Gradient Descent
+
+#### Mean Squared Error (MSE)
+
+![MSE](./images/mean_squared_error.svg)
+
+- \mathrm{MSE} = mean squared error
+- {n} = number of data points
+- Y\_{i} = observed values
+- \hat{Y}\_{i} = predicted values
+
+#### Let's guess
+
+- bad guess: `y = 0x + 1`
+- How wrong were we?
+  - Mean Squared Error
+    - `((1-200)**2 + (1-230)**2 + (1-245)**2 + (1-274)**2 + (1-259)**2 + (1-262)**2) / 6`
+    - 360792 / 6 = 60132
+- better guess: `y = 0x + 200`
+  - Mean Squared Error
+    - `((200-200)**2 + (200-230)**2 + (200-245)**2 + (200-274)**2 + (200-259)**2 + (200-262)**2) / 6`
+    - 15726 / 6 = 2621
+
+#### What's a good guess?
+
+- `Price = m * Lot Size + b`
+- 'm' and 'b' will be as correct as they can be when MSE is as low as possible
+
 </details>
 
 ## Tips
