@@ -404,6 +404,20 @@ But that's for only one independent variable - dependent variable
 - `Price = m * Lot Size + b`
 - 'm' and 'b' will be as correct as they can be when MSE is as low as possible
 
+### 67. Guessing Coefficients with MSE
+
+![MSE graph](./images/mse_graph.png)
+[MSE excel](./images/mse_graph.xlsx)
+
+> We need to find the lowerest MSE
+
+#### Issues with this approach
+
+- - `Price = m * Lot Size + b`
+- Don't know the possible range of b
+- Don't know a step size for incrementing b
+- Huge computational demands when adding in more features
+
 </details>
 
 ## Tips
