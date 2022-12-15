@@ -301,4 +301,33 @@ Error: -19% Guess: 243402.5 , Expected 204950
 Error: 2% Guess: 242865 , Expected 247000
 ```
 
+### 62. Debugging Calculations
+
+```sh
+node --inspect-brk index.js
+```
+
+And navigate `about:inspect` on the browser\
+
+We can inspect the code using breaking points and console
+
+```js
+features.sub(mean).div(variance.pow(0.5)).print();
+features
+  .sub(mean)
+  .div(variance.pow(0.5))
+  // .sub(predictionPoint)
+  .sub(scaledPrediction)
+  .pow(2)
+  .sum(1)
+  .pow(0.5)
+  .print();
+```
+
 </details>
+
+## Tips
+
+- Node js debugging using chrome:
+  - `node --inspect-brk index.js`
+  - navigate `about:inspect`
