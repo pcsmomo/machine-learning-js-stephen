@@ -11,7 +11,10 @@ Machine Learning with Javascript by Stephen Grider
   - plinko
 - 02-algorithm
   - plinko : using lodash
-- 03-tensorflow
+  - `node index.js`
+- 03-tensorflow: tensorflow features for house price project
+- 04-tf-app
+  - knn-tf-house-price: house price
 
 ## Details
 
@@ -289,6 +292,7 @@ StandardDeviation = variance \*\* 0.5
 ### 61. Applying Standardization
 
 ```sh
+# dataColumns: ['lat', 'long', 'sqft_lot'],
 Error: -15% Guess: 1245050 , Expected 1085000
 Error: -64% Guess: 765837.1 , Expected 466800
 Error: -100% Guess: 848675 , Expected 425000
@@ -322,6 +326,24 @@ features
   .sum(1)
   .pow(0.5)
   .print();
+```
+
+### 63. What Now?
+
+```sh
+# tremendous improvement!
+# dataColumns: ['lat', 'long', 'sqft_lot', 'sqft_living'],
+node index.js
+Error: -15% Guess: 1251260 , Expected 1085000
+Error: -11% Guess: 519756.5 , Expected 466800
+Error: -2% Guess: 433700 , Expected 425000
+Error: 19% Guess: 455800 , Expected 565000
+Error: 8% Guess: 699750 , Expected 759000
+Error: -14% Guess: 584260 , Expected 512031
+Error: -9% Guess: 835450 , Expected 768000
+Error: 13% Guess: 1329790 , Expected 1532500
+Error: -36% Guess: 279422.5 , Expected 204950
+Error: 7% Guess: 228767.5 , Expected 247000
 ```
 
 </details>
