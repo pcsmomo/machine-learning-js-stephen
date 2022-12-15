@@ -1,7 +1,19 @@
 const fs = require('fs');
 const _ = require('lodash');
 
-function loadCSV(filename, { converters = {} }) {
+function extractColumns(data, columnNames) {
+  const headers = _.first(data);
+
+  const indexes = _.map(columnNames, column => headers.indexOf(column));
+  const extracted = _.map(data, row => _.pullAt(row, indexes)); // Returns the new array of elements at indexes
+
+  return extracted;
+}
+
+function loadCSV(
+  filename,
+  { converters = {}, dataColumns = [], labelColumns = [] }
+) {
   let data = fs.readFileSync(filename, { encoding: 'utf-8' });
   data = data.split('\n').map(row => row.split(','));
   data = data.map(row => _.dropRightWhile(row, val => val === '')); // drop trailing commas
@@ -23,10 +35,20 @@ function loadCSV(filename, { converters = {} }) {
     });
   });
 
+  let labels = extractColumns(data, labelColumns);
+  data = extractColumns(data, dataColumns);
+
+  // remove the first element which is [headers]
+  data.shift();
+  labels.shift();
+
+  console.log(labels);
   console.log(data);
 }
 
 loadCSV('data.csv', {
+  dataColumns: ['height', 'value'],
+  labelColumns: ['passed'],
   converters: {
     passed: val => val === 'TRUE' // ? true : fakse
     // passed: val => (val === 'TRUE' ? 1 : 0)
