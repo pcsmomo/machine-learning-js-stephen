@@ -49,7 +49,7 @@ Machine Learning with Javascript by Stephen Grider
 
 ### 8. Identifying Relevant Data
 
-![Plinko](./images/plinko.png)
+![Plinko](./resources/images/plinko.png)
 
 | Feature         | Column                 |
 | --------------- | ---------------------- |
@@ -380,7 +380,7 @@ But that's for only one independent variable - dependent variable
 
 #### Mean Squared Error (MSE)
 
-![MSE](./images/mean_squared_error.svg)
+![MSE](./resources/images/mean_squared_error.svg)
 
 - \mathrm{MSE} = mean squared error
 - {n} = number of data points
@@ -406,8 +406,8 @@ But that's for only one independent variable - dependent variable
 
 ### 67. Guessing Coefficients with MSE
 
-![MSE graph](./images/mse_graph.png)
-[MSE excel](./images/mse_graph.xlsx)
+![MSE graph](./resources/images/mse_graph.png)
+[MSE graph.xlsx](./resources/mse_graph.xlsx)
 
 > We need to find the lowerest MSE
 
