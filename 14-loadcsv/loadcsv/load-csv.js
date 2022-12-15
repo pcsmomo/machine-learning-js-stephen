@@ -1,5 +1,6 @@
 const fs = require('fs');
 const _ = require('lodash');
+const shuffleSeed = require('shuffle-seed');
 
 function extractColumns(data, columnNames) {
   const headers = _.first(data);
@@ -12,7 +13,7 @@ function extractColumns(data, columnNames) {
 
 function loadCSV(
   filename,
-  { converters = {}, dataColumns = [], labelColumns = [] }
+  { converters = {}, dataColumns = [], labelColumns = [], shuffle = true }
 ) {
   let data = fs.readFileSync(filename, { encoding: 'utf-8' });
   data = data.split('\n').map(row => row.split(','));
@@ -42,6 +43,13 @@ function loadCSV(
   data.shift();
   labels.shift();
 
+  // Shuffle an Array with seed
+  // for when more than two array need to be suffled in the same order
+  if (shuffle) {
+    data = shuffleSeed.shuffle(data, 'phrase'); // 'phrase' can be any string as long as using the same seed
+    labels = shuffleSeed.shuffle(labels, 'phrase');
+  }
+
   console.log(labels);
   console.log(data);
 }
@@ -49,8 +57,9 @@ function loadCSV(
 loadCSV('data.csv', {
   dataColumns: ['height', 'value'],
   labelColumns: ['passed'],
+  shuffle: true,
   converters: {
-    passed: val => val === 'TRUE' // ? true : fakse
+    passed: val => val === 'TRUE' // ? true : false
     // passed: val => (val === 'TRUE' ? 1 : 0)
   }
 });
