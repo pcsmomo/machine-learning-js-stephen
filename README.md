@@ -358,6 +358,17 @@ Error: 7% Guess: 228767.5 , Expected 247000
 - Cons
   - Lot harder to understand intuitively
 
+### 65. Why Linear Regression?
+
+`price = 200 * Lot Size + 3000`
+
+#### in Google doc,
+
+you can create a chart and add a trend line based on the base (Use Equiation)\
+But that's for only one independent variable - dependent variable
+
+> With linear regression, we can use arbitrary numbers of independent variable to one output
+
 </details>
 
 ## Tips
