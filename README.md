@@ -441,6 +441,21 @@ But that's for only one independent variable - dependent variable
 
 [[Gradient Descent] Sheet on MSE graph.xlsx](./resources/mse_graph.xlsx)
 
+### 73. Answering Common Questions
+
+- Why worry about derivatives? Just calculate MSE twice and compare the two values
+  - by `Slope of MSE` is already doing that calculation
+- We want slope of 0, so why not set the derivative equial to 0 and solve for b?
+
+### 74. Gradient Descent with Multiple Terms
+
+1. Pick a value for 'b' and 'm'
+2. Calculate the slope of MSE with respect to 'm' and 'b': derivative
+3. Is the slope very, very small? If yes, we are done!
+4. Multiply the slope by an arbitrary small value called a 'learning rate'
+5. Subtract that from 'b' and 'm'
+   - Go back to 2
+
 </details>
 
 ## Tips
