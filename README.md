@@ -428,6 +428,17 @@ But that's for only one independent variable - dependent variable
 - `derivative x^2 + 5`: y value means slope
   ![derivative x^2 + 5 plot](./resources/images/derivative_x%5E2%2B5_plot.gif)
 
+### 70. Gradient Descent in Action
+
+1. Pick a value for 'b'
+2. Calculate the slope of MSE with b : derivative
+3. Is the slope very, very small? If yes, we are done!
+4. Multiply the slope by an arbitrary small value called a 'learning rate'
+5. Subtract that from 'b'
+   - Go back to 2
+
+[On the right side in MSE graph.xlsx](./resources/mse_graph.xlsx)
+
 </details>
 
 ## Tips
