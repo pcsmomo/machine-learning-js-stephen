@@ -418,6 +418,16 @@ But that's for only one independent variable - dependent variable
 - Don't know a step size for incrementing b
 - Huge computational demands when adding in more features
 
+### 69. Derivatives!
+
+- [Wolfram Alpha - Computational Intelligence](https://www.wolframalpha.com/)
+- `y = x^2 + 5`
+  ![y = x^2 + 5 plot](./resources/images/y%3Dx%5E2%2B51_plot.gif)
+- search `derivative x^2 + 5` \
+  ![derivative_x^2+5](./resources/images/derivative_x%5E2%2B5.gif)
+- `derivative x^2 + 5`: y value means slope
+  ![derivative x^2 + 5 plot](./resources/images/derivative_x%5E2%2B5_plot.gif)
+
 </details>
 
 ## Tips
