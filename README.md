@@ -437,7 +437,9 @@ But that's for only one independent variable - dependent variable
 5. Subtract that from 'b'
    - Go back to 2
 
-[On the right side in MSE graph.xlsx](./resources/mse_graph.xlsx)
+### 72. Why a Learning Rate?
+
+[[Gradient Descent] Sheet on MSE graph.xlsx](./resources/mse_graph.xlsx)
 
 </details>
 
