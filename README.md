@@ -25,6 +25,10 @@ Machine Learning with Javascript by Stephen Grider
 
 ## Section 1: What is Machine Learning?
 
+### 2. Course Resources
+
+[View diagrams](https://www.diagrams.net/)
+
 ### 5. A Complete Walkthrough
 
 #### Problem solving process
@@ -461,6 +465,23 @@ But that's for only one independent variable - dependent variable
 ### 76. Project Overview
 
 Miles Per Gallon = m \* (Car Horsepower) + b
+
+![formula-MSE](./resources/images/formula-MSE.jpg)\
+![formula-slope-MSE-b](./resources/images/formula-slope-MSE-b.jpg)\
+![formula-slope-MSE-m](./resources/images/formula-slope-MSE-m.jpg)
+
+### 84. Matrix Multiplication
+
+Linear Algebra operation between two matrices(=tensor)
+
+- Are two matrices eligible to be multipled together?
+- What's the output of matrix multiplication
+- How is matrix multiplication done?
+
+#### For example
+
+- shape [4, 2] and shape [2, 3]
+  - Inner shape values are the same -> Eligible for matrix multiplication
 
 </details>
 
