@@ -14,6 +14,16 @@ class LinearRegression {
       },
       options
     );
+
+    this.m = 0;
+    this.b = 0;
+  }
+
+  gradientDescent() {
+    // MPG: miles per gallon
+    const currentGuessesForMPG = this.features.map(row => {
+      return this.m * row[0] + this.b;
+    });
   }
 
   train() {
