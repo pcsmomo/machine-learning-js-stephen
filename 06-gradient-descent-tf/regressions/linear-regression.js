@@ -1,7 +1,7 @@
 const tf = require('@tensorflow/tfjs-node');
+const _ = require('lodash');
 
 class LinearRegression {
-  // assuming features, label are tensorflow objects
   constructor(features, labels, options) {
     this.features = features;
     this.labels = labels;
@@ -22,8 +22,28 @@ class LinearRegression {
   gradientDescent() {
     // MPG: miles per gallon
     const currentGuessesForMPG = this.features.map(row => {
+      // (mx + b)
       return this.m * row[0] + this.b;
     });
+
+    const bSlope =
+      _.sum(
+        currentGuessesForMPG.map((guess, i) => {
+          const actual = this.labels[i][0];
+          return guess - actual;
+        })
+      ) *
+      (2 / this.features.length);
+
+    const mSlope =
+      _.sum(
+        currentGuessesForMPG.map((guess, i) => {
+          const x = this.features[i][0];
+          const actual = this.labels[i][0];
+          return -1 * x * (actual - guess);
+        })
+      ) *
+      (2 / this.features.length);
   }
 
   train() {
