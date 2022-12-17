@@ -456,6 +456,12 @@ But that's for only one independent variable - dependent variable
 5. Subtract that from 'b' and 'm'
    - Go back to 2
 
+## Section 6: Gradient Descent with Tensorflow
+
+### 76. Project Overview
+
+Miles Per Gallon = m \* (Car Horsepower) + b
+
 </details>
 
 ## Tips
