@@ -8,3 +8,10 @@ let { features, labels, testFeatures, testLabels } = loadCSV('./cars.csv', {
   dataColumns: ['horsepower'],
   labelColumns: ['mpg'] // miles per gallon
 });
+
+const regression = new LinearRegression(features, labels, {
+  learningRate: 0.0001,
+  iterations: 100
+});
+
+regression.train();

@@ -53,6 +53,7 @@ class LinearRegression {
   train() {
     for (let i = 0; i < this.options.iterations; i++) {
       this.gradientDescent();
+      console.log('Updated M is:', this.m, 'Updated B is:', this.b);
     }
   }
 }
