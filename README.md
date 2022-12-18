@@ -544,6 +544,32 @@ Weights = [
 | m \* x5 + b |
 | m \* x6 + b |
 
+### 88. How it All Works Together!
+
+```js
+// 1.
+Transposed Engine HorsePower = [
+  [x1, x2, x3, x4, x5, x6],
+  [ 1,  1,  1,  1,  1,  1]
+] // [2, 6]
+
+// 2. [6, 1]
+differences[6] = "resultOf87".sub(actual[6])
+// d = difference
+```
+
+Matrix multification
+
+| -> [2, 1]                                                       |
+| --------------------------------------------------------------- |
+| x1 \* d1 + x2 \* d2 + x3 \* d3 + x4 \* d4 + x5 \* d5 + x6 \* d6 |
+| d1 + d2 + d3 + d4 + d5 + d6                                     |
+
+| it means                                |
+| --------------------------------------- |
+| mSlope = .sum(horsepower \* difference) |
+| bSlope = .sum(difference)               |
+
 </details>
 
 ## Tips
