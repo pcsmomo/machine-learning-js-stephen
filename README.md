@@ -482,6 +482,7 @@ Linear Algebra operation between two matrices(=tensor)
 
 - shape [4, 2] and shape [2, 3]
   - Inner shape values are the same -> Eligible for matrix multiplication
+  - [4, 3]
 
 ### 85. More on Matrix Multiplication
 
@@ -514,6 +515,34 @@ matrix_b = [
 - Features: Tensor of our feature data
 - n: Number of observations
 - Weights: M and B in a tensor
+
+### 87. Simplification with Matrix Multiplication
+
+```js
+Engine HorsePower = [
+  // [engine horse, arbitrary column of 1's]
+  [x1, 1],
+  [x2, 1],
+  [x3, 1],
+  [x4, 1],
+  [x5, 1],
+  [x6, 1],
+] // shape [6, 2]
+
+Weights = [
+  [m],
+  [b]
+] // [2, 1]
+```
+
+| -> [6, 1]   |
+| ----------- |
+| m \* x1 + b |
+| m \* x2 + b |
+| m \* x3 + b |
+| m \* x4 + b |
+| m \* x5 + b |
+| m \* x6 + b |
 
 </details>
 
