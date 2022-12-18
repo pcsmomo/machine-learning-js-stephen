@@ -8,7 +8,7 @@ class LinearRegression {
 
     this.features = tf
       .ones([this.features.shape[0], 1])
-      .concat(this.feature, 1);
+      .concat(this.features, 1);
 
     // default option
     this.options = Object.assign(
@@ -19,12 +19,12 @@ class LinearRegression {
       options
     );
 
-    this.weight = tf.zeros([2, 1]);
+    this.weights = tf.zeros([2, 1]);
   }
 
   gradientDescent() {
     // matMul: matix multiplication
-    const currentGuesses = this.features.matMul(this.weight);
+    const currentGuesses = this.features.matMul(this.weights);
     const differences = currentGuesses.sub(this.labels);
 
     const slopes = this.features
@@ -32,12 +32,19 @@ class LinearRegression {
       .matMul(differences)
       .div(this.features.shape[0]);
     // .mul(2) // this step can be omitted because we're aiming to find slope change
+
+    this.weights = this.weights.sub(slopes.mul(this.options.learningRate));
   }
 
   train() {
     for (let i = 0; i < this.options.iterations; i++) {
       this.gradientDescent();
-      console.log('Updated M is:', this.m, 'Updated B is:', this.b);
+      console.log(
+        'Updated M is:',
+        this.weights.arraySync()[(1, 0)],
+        'Updated B is:',
+        this.weights.arraySync()[(0, 0)]
+      );
     }
   }
 }

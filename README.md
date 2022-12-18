@@ -577,6 +577,10 @@ Matrix multification
 3. Make a tensor for our weights as well
 4. Refactor 'gradientDescent' function to use the new equation
 
+### 91. A Few More Changes
+
+Google it : `Vectorized of gradient descent in linear regression`
+
 </details>
 
 ## Tips
