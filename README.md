@@ -570,6 +570,13 @@ Matrix multification
 | mSlope = .sum(horsepower \* difference) |
 | bSlope = .sum(difference)               |
 
+### 89. Refactoring the Linear Regression Class
+
+1. Refactor constructor to make 'features' and 'labels' into tensors
+2. Append a column of one's to the feature tensor
+3. Make a tensor for our weights as well
+4. Refactor 'gradientDescent' function to use the new equation
+
 </details>
 
 ## Tips

@@ -3,8 +3,12 @@ const _ = require('lodash');
 
 class LinearRegression {
   constructor(features, labels, options) {
-    this.features = features;
-    this.labels = labels;
+    this.features = tf.tensor(features);
+    this.labels = tf.tensor(labels);
+
+    this.features = tf
+      .ones([this.features.shape[0], 1])
+      .concat(this.feature, 1);
 
     // default option
     this.options = Object.assign(
