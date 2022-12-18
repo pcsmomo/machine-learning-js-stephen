@@ -507,6 +507,14 @@ matrix_b = [
 | 170                 | 90 + 280 = 370  | 570 |
 | 200                 | 120 + 320 = 440 | 680 |
 
+### 86. Matrix Form of Slope Equations
+
+- Slope of MSE with respect to M and B: `(Features * ((Features * Weights) - Labels)) / n `
+- Labels: Tensor of our label data
+- Features: Tensor of our feature data
+- n: Number of observations
+- Weights: M and B in a tensor
+
 </details>
 
 ## Tips
