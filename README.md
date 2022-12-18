@@ -483,6 +483,30 @@ Linear Algebra operation between two matrices(=tensor)
 - shape [4, 2] and shape [2, 3]
   - Inner shape values are the same -> Eligible for matrix multiplication
 
+### 85. More on Matrix Multiplication
+
+```js
+matrix_a = [
+  [1, 5],
+  [2, 6],
+  [3, 7],
+  [4, 8]
+];
+matrix_b = [
+  [10, 30, 50],
+  [20, 40, 60]
+];
+```
+
+**Matrix C**
+
+|                     |                 |     |
+| ------------------- | --------------- | --- |
+| 1\*10 + 5\*20 = 110 | 30 + 200 = 230  | 350 |
+| 2\*10 + 6\*20 = 140 | 60 + 240 = 300  | 460 |
+| 170                 | 90 + 280 = 370  | 570 |
+| 200                 | 120 + 320 = 440 | 680 |
+
 </details>
 
 ## Tips
