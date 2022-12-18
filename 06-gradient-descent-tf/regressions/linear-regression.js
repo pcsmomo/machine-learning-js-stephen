@@ -19,39 +19,19 @@ class LinearRegression {
       options
     );
 
-    this.m = 0;
-    this.b = 0;
+    this.weight = tf.zeros([2, 1]);
   }
 
   gradientDescent() {
-    // MPG: miles per gallon
-    const currentGuessesForMPG = this.features.map(row => {
-      // (mx + b)
-      return this.m * row[0] + this.b;
-    });
+    // matMul: matix multiplication
+    const currentGuesses = this.features.matMul(this.weight);
+    const differences = currentGuesses.sub(this.labels);
 
-    const bSlope =
-      _.sum(
-        currentGuessesForMPG.map((guess, i) => {
-          const actual = this.labels[i][0];
-          return guess - actual;
-        })
-      ) *
-      (2 / this.features.length);
-
-    const mSlope =
-      _.sum(
-        currentGuessesForMPG.map((guess, i) => {
-          const x = this.features[i][0];
-          const actual = this.labels[i][0];
-          return -1 * x * (actual - guess);
-        })
-      ) *
-      (2 / this.features.length);
-
-    // set the next 'm' and 'b'
-    this.m = this.m - mSlope * this.options.learningRate;
-    this.b = this.b - bSlope * this.options.learningRate;
+    const slopes = this.features
+      .transpose()
+      .matMul(differences)
+      .div(this.features.shape[0]);
+    // .mul(2) // this step can be omitted because we're aiming to find slope change
   }
 
   train() {
