@@ -570,6 +570,8 @@ Matrix multification
 | mSlope = .sum(horsepower \* difference) |
 | bSlope = .sum(difference)               |
 
+## Section 7: Increasing Performance with Vectorized Solutions
+
 ### 89. Refactoring the Linear Regression Class
 
 1. Refactor constructor to make 'features' and 'labels' into tensors
@@ -580,6 +582,14 @@ Matrix multification
 ### 91. A Few More Changes
 
 Google it : `Vectorized of gradient descent in linear regression`
+
+### 93. Calculating Model Accuracy
+
+Coefficient of Determination
+
+- `R ** 2 = 1 - (SS(res) / SS(tot))`
+- SS(tot): Total sum of squares, (Actual + Average) \*\* 2
+- SS(res): Sum of squares of residuals, (Actual + Predicted) \*\* 2
 
 </details>
 
