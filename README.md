@@ -654,6 +654,12 @@ node index.js
 ![MSE for multivariate linear regression](./resources/images/multivariate-mse.jpg)\
 ![Vectorized MSE for multivariate linear regression](./resources/images/multivariate-vectored-mse.jpg)
 
+## Section 8: Plotting Data with Javascript
+
+### 106. Observing Changing Learning Rate and MSE
+
+> now, the initial learningRate does not matter as it will be adjusted during training
+
 </details>
 
 ## Tips

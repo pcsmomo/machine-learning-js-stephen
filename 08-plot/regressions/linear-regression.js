@@ -35,6 +35,7 @@ class LinearRegression {
 
   train() {
     for (let i = 0; i < this.options.iterations; i++) {
+      // console.log(this.options.learningRate);
       this.gradientDescent();
       // const weights = this.weights.arraySync();
       // console.log('Updated M is:', weights[1], 'Updated B is:', weights[0]);

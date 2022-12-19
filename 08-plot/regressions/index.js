@@ -11,14 +11,13 @@ let { features, labels, testFeatures, testLabels } = loadCSV('./cars.csv', {
 });
 
 const regression = new LinearRegression(features, labels, {
-  learningRate: 0.1,
+  learningRate: 10,
   iterations: 100
 });
 
 regression.train();
 const r2 = regression.test(testFeatures, testLabels);
 
-console.log('R2 is', r2);
-
-console.log(regression.mseHistory.length);
 console.log(regression.mseHistory);
+console.log('mseHistory length:', regression.mseHistory.length);
+console.log('R2 is', r2);
