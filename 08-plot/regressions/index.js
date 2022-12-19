@@ -1,5 +1,7 @@
 const tf = require('@tensorflow/tfjs-node');
-const plot = require('node-remote-plot');
+const plot = require('node-remote-plot'); // generate an image
+// const { plot: plotlib } = require('nodeplotlib'); // plotting on the Nest server
+
 const loadCSV = require('./load-csv');
 // const LinearRegression = require('./linear-regression-no-tf');
 const LinearRegression = require('./linear-regression');
@@ -23,10 +25,17 @@ console.log(regression.mseHistory);
 console.log('MSE History:', regression.mseHistory.length);
 
 // generate plot.png file
+const reversedMseHistory = [...regression.mseHistory].reverse();
 plot({
-  x: regression.mseHistory.reverse(),
+  x: reversedMseHistory,
   xLabel: 'Iteration #',
   yLabel: 'Mean Squared Error'
 });
 
 console.log('R2 is', r2);
+
+// plot on the browser
+// plotlib([{ y: reversedMseHistory }], {
+//   xaxis: { title: { text: 'Iteration #' } },
+//   yaxis: { title: { text: 'Mean Squared Error' } }
+// });
