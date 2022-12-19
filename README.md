@@ -598,6 +598,27 @@ node index.js
 # R2 is -3.0282658720681175
 ```
 
+### 98. Reapplying Standardization
+
+```sh
+node index.js
+# R2 is -10.938349176819127
+```
+
+### 100. Massaging Learning Rates
+
+```sh
+node index.js
+# R2 is 0.6048547748640769
+```
+
+### 101. Moving Towards Multivariate Regression
+
+`MPG = b + (m1 * Weight) + (m2 * Displacement) + (m3 * Horsepower)`
+
+- Univariate Linear Regressions: `y = b + (m * x)`
+- Multivariate Linear Regressions: `y = b + (m1 * x1) + (m2 * x2) + (m3 * x3)`
+
 </details>
 
 ## Tips

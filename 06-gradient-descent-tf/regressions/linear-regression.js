@@ -53,8 +53,8 @@ class LinearRegression {
 
     const res = testLabels.sub(predictions).pow(2).sum().arraySync();
     const tot = testLabels.sub(testLabels.mean()).pow(2).sum().arraySync();
-    console.log('res:', res);
-    console.log('tot:', tot);
+    // console.log('res:', res);
+    // console.log('tot:', tot);
 
     const coefficientOfDetermination = 1 - res / tot; // = R2
 
