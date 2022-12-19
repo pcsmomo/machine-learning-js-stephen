@@ -55,8 +55,17 @@ class LinearRegression {
     testFeatures = tf.ones([testFeatures.shape[0], 1]).concat(testFeatures, 1);
 
     const predictions = testFeatures.matMul(this.weights);
+    // predictions.print();
 
-    predictions.print();
+    const res = testLabels.sub(predictions).pow(2).sum().arraySync();
+    const tot = testLabels.sub(testLabels.mean()).pow(2).sum().arraySync();
+    console.log('res:', res);
+    console.log('tot:', tot);
+
+    const coefficientOfDetermination = 1 - res / tot; // = R2
+    console.log('1 - res / tot:', coefficientOfDetermination);
+
+    return coefficientOfDetermination;
   }
 }
 

@@ -591,6 +591,13 @@ Coefficient of Determination
 - SS(tot): Total sum of squares, (Actual + Average) \*\* 2
 - SS(res): Sum of squares of residuals, (Actual + Predicted) \*\* 2
 
+### 95. Dealing with Bad Accuracy
+
+```sh
+node index.js
+# R2 is -3.0282658720681175
+```
+
 </details>
 
 ## Tips
