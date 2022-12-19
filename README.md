@@ -660,6 +660,12 @@ node index.js
 
 > now, the initial learningRate does not matter as it will be adjusted during training
 
+### 107. Plotting MSE Values
+
+> the plot will help us to easily figure how many iterations would be enough
+
+![initial MSE history plot](./08-plot/regressions/mse-history-init.png)
+
 </details>
 
 ## Tips
