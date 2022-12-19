@@ -57,7 +57,6 @@ class LinearRegression {
     console.log('tot:', tot);
 
     const coefficientOfDetermination = 1 - res / tot; // = R2
-    console.log('1 - res / tot:', coefficientOfDetermination);
 
     return coefficientOfDetermination;
   }
