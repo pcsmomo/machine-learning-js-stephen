@@ -15,6 +15,9 @@ Machine Learning with Javascript by Stephen Grider
 - 03-tensorflow: tensorflow features for house price project
 - 04-tf-app
   - knn-tf-house-price: house price
+- 06 -> regressions
+- 07 -> regressions
+- 08 -> regressions
 - 14-loadcsv
   - loadcsv: csv loading project
 

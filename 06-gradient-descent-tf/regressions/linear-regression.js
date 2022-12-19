@@ -3,9 +3,8 @@ const _ = require('lodash');
 
 class LinearRegression {
   constructor(features, labels, options) {
-    this.features = this.processFeatures(features);
-    this.labels = tf.tensor(labels);
-    this.mseHistory = [];
+    this.features = features;
+    this.labels = labels;
 
     // default option
     this.options = Object.assign(
@@ -16,98 +15,45 @@ class LinearRegression {
       options
     );
 
-    this.weights = tf.zeros([this.features.shape[1], 1]);
+    this.m = 0;
+    this.b = 0;
   }
 
   gradientDescent() {
-    // matMul: matix multiplication
-    const currentGuesses = this.features.matMul(this.weights);
-    const differences = currentGuesses.sub(this.labels);
+    // MPG: miles per gallon
+    const currentGuessesForMPG = this.features.map(row => {
+      // (mx + b)
+      return this.m * row[0] + this.b;
+    });
 
-    const slopes = this.features
-      .transpose()
-      .matMul(differences)
-      .div(this.features.shape[0]);
-    // .mul(2); // this step can be omitted because we're aiming to find slope change
+    const bSlope =
+      _.sum(
+        currentGuessesForMPG.map((guess, i) => {
+          const actual = this.labels[i][0];
+          return guess - actual;
+        })
+      ) *
+      (2 / this.features.length);
 
-    this.weights = this.weights.sub(slopes.mul(this.options.learningRate));
+    const mSlope =
+      _.sum(
+        currentGuessesForMPG.map((guess, i) => {
+          const x = this.features[i][0];
+          const actual = this.labels[i][0];
+          return -1 * x * (actual - guess);
+        })
+      ) *
+      (2 / this.features.length);
+
+    // set the next 'm' and 'b'
+    this.m = this.m - mSlope * this.options.learningRate;
+    this.b = this.b - bSlope * this.options.learningRate;
   }
 
   train() {
     for (let i = 0; i < this.options.iterations; i++) {
       this.gradientDescent();
-      // const weights = this.weights.arraySync();
-      // console.log('Updated M is:', weights[1], 'Updated B is:', weights[0]);
-
-      this.recordMSE();
-      this.updateLearningRate();
-    }
-  }
-
-  test(testFeatures, testLabels) {
-    testFeatures = this.processFeatures(testFeatures);
-    testLabels = tf.tensor(testLabels);
-
-    const predictions = testFeatures.matMul(this.weights);
-    // predictions.print();
-
-    const res = testLabels.sub(predictions).pow(2).sum().arraySync();
-    const tot = testLabels.sub(testLabels.mean()).pow(2).sum().arraySync();
-    // console.log('res:', res);
-    // console.log('tot:', tot);
-
-    const coefficientOfDetermination = 1 - res / tot; // = R2
-
-    return coefficientOfDetermination;
-  }
-
-  processFeatures(features) {
-    features = tf.tensor(features);
-
-    if (this.mean && this.variance) {
-      features = features.sub(this.mean).div(this.variance.pow(0.5));
-    } else {
-      features = this.standardize(features);
-    }
-
-    features = tf.ones([features.shape[0], 1]).concat(features, 1);
-
-    return features;
-  }
-
-  standardize(features) {
-    const { mean, variance } = tf.moments(features, 0);
-
-    this.mean = mean;
-    this.variance = variance;
-
-    return features.sub(mean).div(variance.pow(0.5));
-  }
-
-  recordMSE() {
-    // Vectorized MSE (Mean Squared Error)
-    const mse = this.features
-      .matMul(this.weights)
-      .sub(this.labels)
-      .pow(2)
-      .sum()
-      .div(this.features.shape[0])
-      .arraySync();
-
-    this.mseHistory.unshift(mse);
-  }
-
-  updateLearningRate() {
-    if (this.mseHistory.length < 2) {
-      return;
-    }
-
-    if (this.mseHistory[0] > this.mseHistory[1]) {
-      // when mse is increased
-      this.options.learningRate /= 2;
-    } else {
-      // when mse went down
-      this.options.learningRate *= 1.05;
+      console.log('Updated M is:', this.m, 'Updated B is:', this.b);
     }
   }
 }
