@@ -36,14 +36,11 @@ class LinearRegression {
   train() {
     for (let i = 0; i < this.options.iterations; i++) {
       this.gradientDescent();
-      // console.log(
-      //   'Updated M is:',
-      //   this.weights.arraySync()[1],
-      //   'Updated B is:',
-      //   this.weights.arraySync()[0]
-      // );
+      // const weights = this.weights.arraySync();
+      // console.log('Updated M is:', weights[1], 'Updated B is:', weights[0]);
 
       this.recordMSE();
+      this.updateLearningRate();
     }
   }
 
@@ -97,7 +94,21 @@ class LinearRegression {
       .div(this.features.shape[0])
       .arraySync();
 
-    this.mseHistory.push(mse);
+    this.mseHistory.unshift(mse);
+  }
+
+  updateLearningRate() {
+    if (this.mseHistory.length < 2) {
+      return;
+    }
+
+    if (this.mseHistory[0] > this.mseHistory[1]) {
+      // when mse is increased
+      this.options.learningRate /= 2;
+    } else {
+      // when mse went down
+      this.options.learningRate *= 1.05;
+    }
   }
 }
 
