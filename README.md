@@ -628,6 +628,24 @@ node index.js
 - `iterations: 1000` -> R2 is 0.6581457923927724
 - `iterations: 100` -> R2 is 0.6609495536468749
 
+### 103. Learning Rate Optimization
+
+#### Some of existing methods to help to adjust learning rate
+
+- Adam
+- Adagrad
+- RMSProp
+- Momentum
+
+#### Custom Learning Rate Optimization
+
+> however, those methods above are a bit too complicated for our case
+
+1. With every interation of GD, calculate the exact value of MSE and store it
+2. After running an iteration of GD, look at the current MSE and the old MSE
+3. If the MSE went _up_ then we did a bad update, so divide learning rate by 2
+4. If the MSE went _down_ then we are going in the right direction! Increase LR by 5%
+
 </details>
 
 ## Tips
