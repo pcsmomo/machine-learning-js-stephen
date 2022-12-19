@@ -619,6 +619,15 @@ node index.js
 - Univariate Linear Regressions: `y = b + (m * x)`
 - Multivariate Linear Regressions: `y = b + (m1 * x1) + (m2 * x2) + (m3 * x3)`
 
+### 102. Refactoring for Multivariate Analysis
+
+- `learningRate: 1` -> R2 is -Infinity
+- `learningRate: 0.01` -> R2 is -0.8926304296686307
+- `learningRate: 0.5` -> R2 is 0.658514569203041
+- `learningRate: 0.1` -> R2 is 0.6609495536468749
+- `iterations: 1000` -> R2 is 0.6581457923927724
+- `iterations: 100` -> R2 is 0.6609495536468749
+
 </details>
 
 ## Tips
