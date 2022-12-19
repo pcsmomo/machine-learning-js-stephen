@@ -5,6 +5,7 @@ class LinearRegression {
   constructor(features, labels, options) {
     this.features = this.processFeatures(features);
     this.labels = tf.tensor(labels);
+    this.mseHistory = [];
 
     // default option
     this.options = Object.assign(
@@ -41,6 +42,8 @@ class LinearRegression {
       //   'Updated B is:',
       //   this.weights.arraySync()[0]
       // );
+
+      this.recordMSE();
     }
   }
 
@@ -82,6 +85,19 @@ class LinearRegression {
     this.variance = variance;
 
     return features.sub(mean).div(variance.pow(0.5));
+  }
+
+  recordMSE() {
+    // Vectorized MSE (Mean Squared Error)
+    const mse = this.features
+      .matMul(this.weights)
+      .sub(this.labels)
+      .pow(2)
+      .sum()
+      .div(this.features.shape[0])
+      .arraySync();
+
+    this.mseHistory.push(mse);
   }
 }
 

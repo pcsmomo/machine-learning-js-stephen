@@ -646,6 +646,11 @@ node index.js
 3. If the MSE went _up_ then we did a bad update, so divide learning rate by 2
 4. If the MSE went _down_ then we are going in the right direction! Increase LR by 5%
 
+### 104. Recording MSE History
+
+![MSE for multivariate linear regression](./resources/images/multivariate-mse.jpg)\
+![Vectorized MSE for multivariate linear regression](./resources/images/multivariate-vectored-mse.jpg)
+
 </details>
 
 ## Tips

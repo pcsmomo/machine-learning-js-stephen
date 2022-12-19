@@ -19,3 +19,6 @@ regression.train();
 const r2 = regression.test(testFeatures, testLabels);
 
 console.log('R2 is', r2);
+
+console.log(regression.mseHistory.length);
+console.log(regression.mseHistory);
