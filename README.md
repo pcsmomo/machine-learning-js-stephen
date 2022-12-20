@@ -15,9 +15,7 @@ Machine Learning with Javascript by Stephen Grider
 - 03-tensorflow: tensorflow features for house price project
 - 04-tf-app
   - knn-tf-house-price: house price
-- 06 -> regressions
-- 07 -> regressions
-- 08 -> regressions
+- 06 ~ 09 -> regressions
 - 14-loadcsv
   - loadcsv: csv loading project
 
@@ -665,6 +663,17 @@ node index.js
 > the plot will help us to easily figure how many iterations would be enough
 
 ![initial MSE history plot](./08-plot/regressions/mse-history-init.png)
+
+## Section 9: Gradient Descent Alterations
+
+### 109. Batch and Stochastic Gradient Descent
+
+- Gradient Descent: [6, 4]
+  - Use entire feature set to update M and B
+- Batch Gradients Descent: [3, 4]
+  - Use a couple observations at a time to update M and B
+- Stochastic Gradient Descent: [1, 4]
+  - Use one observation at a time to update M and B
 
 </details>
 
