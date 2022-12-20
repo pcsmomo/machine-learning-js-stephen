@@ -19,15 +19,15 @@ class LinearRegression {
     this.weights = tf.zeros([this.features.shape[1], 1]);
   }
 
-  gradientDescent() {
+  gradientDescent(features, labels) {
     // matMul: matix multiplication
-    const currentGuesses = this.features.matMul(this.weights);
-    const differences = currentGuesses.sub(this.labels);
+    const currentGuesses = features.matMul(this.weights);
+    const differences = currentGuesses.sub(labels);
 
-    const slopes = this.features
+    const slopes = features
       .transpose()
       .matMul(differences)
-      .div(this.features.shape[0]);
+      .div(features.shape[0]);
     // .mul(2); // this step can be omitted because we're aiming to find slope change
 
     this.weights = this.weights.sub(slopes.mul(this.options.learningRate));
@@ -36,7 +36,6 @@ class LinearRegression {
   train() {
     for (let i = 0; i < this.options.iterations; i++) {
       this.gradientDescent();
-
       this.recordMSE();
       this.updateLearningRate();
     }
