@@ -31,6 +31,12 @@ plot({
   xLabel: 'Iteration #',
   yLabel: 'Mean Squared Error'
 });
+// plot({
+//   x: regression.bHistory,
+//   y: reversedMseHistory,
+//   xLabel: 'Value of B',
+//   yLabel: 'Mean Squared Error'
+// });
 
 console.log('R2 is', r2);
 
