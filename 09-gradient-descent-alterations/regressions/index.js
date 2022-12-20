@@ -15,23 +15,23 @@ let { features, labels, testFeatures, testLabels } = loadCSV('./cars.csv', {
 
 const regression = new LinearRegression(features, labels, {
   learningRate: 0.1,
-  iterations: 100,
-  batchSize: 10
+  iterations: 3, // 100
+  batchSize: 1 // 10
 });
 
 regression.train();
 const r2 = regression.test(testFeatures, testLabels);
 
-console.log(regression.mseHistory);
-console.log('MSE History:', regression.mseHistory.length);
+// console.log(regression.mseHistory);
+// console.log('MSE History:', regression.mseHistory.length);
 
 // generate plot.png file
-// const reversedMseHistory = [...regression.mseHistory].reverse();
-// plot({
-//   x: reversedMseHistory,
-//   xLabel: 'Iteration #',
-//   yLabel: 'Mean Squared Error'
-// });
+const reversedMseHistory = [...regression.mseHistory].reverse();
+plot({
+  x: reversedMseHistory,
+  xLabel: 'Iteration #',
+  yLabel: 'Mean Squared Error'
+});
 
 console.log('R2 is', r2);
 // plot on the browser

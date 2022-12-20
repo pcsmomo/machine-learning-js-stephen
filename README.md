@@ -675,6 +675,26 @@ node index.js
 - Stochastic Gradient Descent: [1, 4]
   - Use one observation at a time to update M and B
 
+### 113. Evaluating Batch Gradient Descent Results
+
+> if there are a lot more data, we can more the performance improvement more clearly
+
+```json
+// Batch Gradients Descent
+{
+  "iterations": 3,
+  "batchSize": 10
+}
+```
+
+```json
+// Stochastic Gradients Descent
+{
+  "iterations": 3,
+  "batchSize": 1
+}
+```
+
 </details>
 
 ## Tips
