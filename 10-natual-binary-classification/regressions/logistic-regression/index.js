@@ -24,9 +24,11 @@ const regression = new LogisticRegression(features, labels, {
 regression.train();
 
 // dataColumns: ['horsepower', 'displacement', 'weight'],
-regression
-  .predict([
-    [130, 307, 1.75],
-    [88, 97, 1.07]
-  ])
-  .print();
+// regression
+//   .predict([
+//     [130, 307, 1.75],
+//     [88, 97, 1.07]
+//   ])
+//   .print();
+
+console.log(regression.test(testFeatures, testLabels)); // percentage: 88% (not bad!)
