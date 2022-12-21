@@ -1,10 +1,11 @@
 const tf = require('@tensorflow/tfjs-node');
 const loadCSV = require('../load-csv');
+const LogisticRegression = require('./logistic-regression');
 
 const { features, labels, testFeatures, testLabels } = loadCSV(
   '../data/cars.csv',
   {
-    dataColumns: ['horsepower', 'weight', 'displacement'],
+    dataColumns: ['horsepower', 'displacement', 'weight'],
     labelColumns: ['passedemissions'],
     shuffle: true,
     splitTest: 50,
@@ -14,4 +15,18 @@ const { features, labels, testFeatures, testLabels } = loadCSV(
   }
 );
 
-console.log(labels);
+const regression = new LogisticRegression(features, labels, {
+  learningRate: 0.5,
+  iterations: 100,
+  batchSize: 50
+});
+
+regression.train();
+
+// dataColumns: ['horsepower', 'displacement', 'weight'],
+regression
+  .predict([
+    [130, 307, 1.75],
+    [88, 97, 1.07]
+  ])
+  .print();

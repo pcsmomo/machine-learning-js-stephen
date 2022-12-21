@@ -21,7 +21,7 @@ class LogisticRegression {
 
   gradientDescent(features, labels) {
     // matMul: matix multiplication
-    const currentGuesses = features.matMul(this.weights);
+    const currentGuesses = features.matMul(this.weights).sigmoid();
     const differences = currentGuesses.sub(labels);
 
     const slopes = features
@@ -59,7 +59,7 @@ class LogisticRegression {
   }
 
   predict(observations) {
-    return this.processFeatures(observations).matMul(this.weights);
+    return this.processFeatures(observations).matMul(this.weights).sigmoid();
   }
 
   test(testFeatures, testLabels) {
