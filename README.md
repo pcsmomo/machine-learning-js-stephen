@@ -720,6 +720,15 @@ e = Euler's number = 2.71828...
 
 ![sigmoid-example](./resources/images/sigmoid-example.png)
 
+### 120. Changes for Logistic Regression
+
+1. Encode label values as either '0' or '1'
+2. Guess a starting value of B and M (and M2, M3, etc)
+3. Calculate the slope of MSE using all observations in feature set and current M/B values
+4. Multiply the slope by learning rate
+5. Update B and M
+   - Go back to 3
+
 </details>
 
 ## Tips
