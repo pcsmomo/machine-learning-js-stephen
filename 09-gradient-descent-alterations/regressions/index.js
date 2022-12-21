@@ -16,7 +16,7 @@ let { features, labels, testFeatures, testLabels } = loadCSV('./cars.csv', {
 const regression = new LinearRegression(features, labels, {
   learningRate: 0.1,
   iterations: 3, // 100
-  batchSize: 1 // 10
+  batchSize: 10
 });
 
 regression.train();
@@ -27,11 +27,11 @@ const r2 = regression.test(testFeatures, testLabels);
 
 // generate plot.png file
 const reversedMseHistory = [...regression.mseHistory].reverse();
-plot({
-  x: reversedMseHistory,
-  xLabel: 'Iteration #',
-  yLabel: 'Mean Squared Error'
-});
+// plot({
+//   x: reversedMseHistory,
+//   xLabel: 'Iteration #',
+//   yLabel: 'Mean Squared Error'
+// });
 
 console.log('R2 is', r2);
 // plot on the browser
@@ -39,3 +39,11 @@ console.log('R2 is', r2);
 //   xaxis: { title: { text: 'Iteration #' } },
 //   yaxis: { title: { text: 'Mean Squared Error' } }
 // });
+
+// dataColumns: ['horsepower', 'weight', 'displacement'],
+regression
+  .predict([
+    [120, 2, 380]
+    // [135, 2.1, 420]
+  ])
+  .print();
