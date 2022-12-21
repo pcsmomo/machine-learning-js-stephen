@@ -731,6 +731,14 @@ e = Euler's number = 2.71828...
 5. Update B and M
    - Go back to 3
 
+### 125. Updating Linear Regression for Logistic Regression
+
+- Metric of how bad we guessed (Cross Entropy)
+  ![cross-entropy-01](./resources/images/cross-entropy-01.png)
+- Actual: Encoded label value
+- Guess: Our guess, sigmoid(mx + b)
+- n: Number of observations
+
 </details>
 
 ## Tips
