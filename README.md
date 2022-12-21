@@ -15,7 +15,16 @@ Machine Learning with Javascript by Stephen Grider
 - 03-tensorflow: tensorflow features for house price project
 - 04-tf-app
   - knn-tf-house-price: house price
-- 06 ~ 09 -> regressions
+- 06-gradient-descent
+  - regression
+- 07-vectorized
+  - regression
+- 08-plot
+  - regression
+- 09: batch stochastic gradient descent
+  - regression
+- 10-natural-binary-classification
+  - regression
 - 14-loadcsv
   - loadcsv: csv loading project
 
@@ -694,6 +703,14 @@ node index.js
   "batchSize": 1
 }
 ```
+
+## Section 10: Natural Binary Classification
+
+### 115. Introducing Logistic Regression
+
+- Linear Regression: Predicts continuous values
+- Logistic Regression: Predicts descrete values (classficiation)
+  - Basic logistic regression - Binary classification - pass / not pass - spam / not spam - customer accepts / declines - apple phone / android phone
 
 </details>
 
