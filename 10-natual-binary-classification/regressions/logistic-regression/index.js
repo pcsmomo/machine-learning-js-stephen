@@ -7,6 +7,11 @@ const { features, labels, testFeatures, testLabels } = loadCSV(
     dataColumns: ['horsepower', 'weight', 'displacement'],
     labelColumns: ['passedemissions'],
     shuffle: true,
-    splitTest: 50
+    splitTest: 50,
+    converters: {
+      passedemissions: val => (val === 'TRUE' ? 1 : 0)
+    }
   }
 );
+
+console.log(labels);
