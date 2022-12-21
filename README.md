@@ -712,6 +712,14 @@ node index.js
 - Logistic Regression: Predicts descrete values (classficiation)
   - Basic logistic regression - Binary classification - pass / not pass - spam / not spam - customer accepts / declines - apple phone / android phone
 
+### 118. The Sigmoid Equation
+
+![sigmoid-function](./resources/images/sigmoid-function.svg)
+
+e = Euler's number = 2.71828...
+
+![sigmoid-example](./resources/images/sigmoid-example.png)
+
 </details>
 
 ## Tips
