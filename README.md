@@ -16,15 +16,17 @@ Machine Learning with Javascript by Stephen Grider
 - 04-tf-app
   - knn-tf-house-price: house price
 - 06-gradient-descent
-  - regression
+  - regressions
 - 07-vectorized
-  - regression
+  - regressions
 - 08-plot
-  - regression
+  - regressions
 - 09: batch stochastic gradient descent
-  - regression
+  - regressions : (linear complete)
 - 10-natural-binary-classification
-  - regression
+  - regressions
+    - linear-regression (complete)
+    - logistic-regression
 - 14-loadcsv
   - loadcsv: csv loading project
 
