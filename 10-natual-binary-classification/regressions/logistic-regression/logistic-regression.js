@@ -104,18 +104,32 @@ class LogisticRegression {
     const guesses = this.features.matMul(this.weights).sigmoid();
 
     const termOne = this.labels.transpose().matMul(guesses.log());
+
+    const termTwo = this.labels
+      .mul(-1)
+      .add(1)
+      .transpose()
+      .matMul(guesses.mul(-1).add(1).log());
+
+    const cost = termOne
+      .add(termTwo)
+      .div(this.features.shape[0])
+      .mul(-1)
+      .arraySync()[0][0];
+
+    this.costHistory.unshift(cost);
   }
 
   updateLearningRate() {
-    if (this.mseHistory.length < 2) {
+    if (this.costHistory.length < 2) {
       return;
     }
 
-    if (this.mseHistory[0] > this.mseHistory[1]) {
-      // when mse is increased
+    if (this.costHistory[0] > this.costHistory[1]) {
+      // increasing
       this.options.learningRate /= 2;
     } else {
-      // when mse went down
+      // decreasing
       this.options.learningRate *= 1.05;
     }
   }

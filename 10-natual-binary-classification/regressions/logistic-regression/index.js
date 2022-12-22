@@ -33,3 +33,5 @@ regression.train();
 //   .print();
 
 console.log(regression.test(testFeatures, testLabels)); // percentage: 88% (not bad!)
+
+console.log(regression.costHistory);
