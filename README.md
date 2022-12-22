@@ -748,6 +748,18 @@ e = Euler's number = 2.71828...
 ![cross-entropy-vectorized-01](./resources/images/cross-entropy-vectorized-01.png)\
 ![cross-entropy-vectorized-02](./resources/images/cross-entropy-vectorized-02.png)
 
+## Section 11: Multi-Value Classification
+
+### 135. Multinominal Logistic Regression
+
+#### Multiple classification options
+
+- Given a person's number of hours spent driving per day, what type of car do they prefer?
+  - Luxury
+  - Sedan
+  - Truc
+  - Compact
+
 </details>
 
 ## Tips
