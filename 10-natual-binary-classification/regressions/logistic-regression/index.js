@@ -1,4 +1,5 @@
 const tf = require('@tensorflow/tfjs-node');
+const plot = require('node-remote-plot'); // generate an image
 const loadCSV = require('../load-csv');
 const LogisticRegression = require('./logistic-regression');
 
@@ -18,7 +19,7 @@ const { features, labels, testFeatures, testLabels } = loadCSV(
 const regression = new LogisticRegression(features, labels, {
   learningRate: 0.5,
   iterations: 100,
-  batchSize: 50,
+  batchSize: 5, // 50
   decisionBoundary: 0.5
 });
 
@@ -35,3 +36,6 @@ regression.train();
 console.log(regression.test(testFeatures, testLabels)); // percentage: 88% (not bad!)
 
 console.log(regression.costHistory);
+plot({
+  x: regression.costHistory.reverse()
+});
