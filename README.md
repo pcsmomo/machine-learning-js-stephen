@@ -739,6 +739,15 @@ e = Euler's number = 2.71828...
 - Guess: Our guess, sigmoid(mx + b)
 - n: Number of observations
 
+### 131. Mean Squared Error vs Cross Entropy
+
+- MSE has one minimum value
+
+### 132. Refactoring with Cross Entropy
+
+![cross-entropy-vectorized-01](./resources/images/cross-entropy-vectorized-01.png)\
+![cross-entropy-vectorized-02](./resources/images/cross-entropy-vectorized-02.png)
+
 </details>
 
 ## Tips

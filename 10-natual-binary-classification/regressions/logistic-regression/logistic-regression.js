@@ -5,7 +5,7 @@ class LogisticRegression {
   constructor(features, labels, options) {
     this.features = this.processFeatures(features);
     this.labels = tf.tensor(labels);
-    this.mseHistory = [];
+    this.costHistory = []; // Cost function (= Cross Entropy)
 
     // default option
     this.options = Object.assign(
@@ -54,7 +54,7 @@ class LogisticRegression {
         this.gradientDescent(featureSlice, labelSlice);
       }
 
-      this.recordMSE();
+      this.recordCost();
       this.updateLearningRate();
     }
   }
@@ -99,17 +99,11 @@ class LogisticRegression {
     return features.sub(mean).div(variance.pow(0.5));
   }
 
-  recordMSE() {
-    // Vectorized MSE (Mean Squared Error)
-    const mse = this.features
-      .matMul(this.weights)
-      .sub(this.labels)
-      .pow(2)
-      .sum()
-      .div(this.features.shape[0])
-      .arraySync();
+  recordCost() {
+    // Vectorized Cross Endtropy (= cost function)
+    const guesses = this.features.matMul(this.weights).sigmoid();
 
-    this.mseHistory.unshift(mse);
+    const termOne = this.labels.transpose().matMul(guesses.log());
   }
 
   updateLearningRate() {
