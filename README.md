@@ -807,6 +807,13 @@ node index.js
 variance.cast('bool').logicalNot().cast('float32').print();
 ```
 
+### 157. Backfilling Variance
+
+```sh
+node index.js
+# Accuracy is 0.88
+```
+
 </details>
 
 ## Tips
