@@ -762,6 +762,18 @@ e = Euler's number = 2.71828...
   - Truc
   - Compact
 
+### 143. Marginal vs Conditional Probability
+
+```sh
+node index.js
+# [[1, 1, 0],]
+```
+
+- Marginal Probability Distribution: this is what currently happens
+  - Considers one possible output case in isolation
+- Conditional Probability Distribution: e.g. rolling a dice
+  - Considers all possible output cases together
+
 </details>
 
 ## Tips

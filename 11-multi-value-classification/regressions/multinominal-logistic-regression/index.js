@@ -35,8 +35,8 @@ const regression = new LogisticRegression(features, _.flatMap(labels), {
   batchSize: 10
 });
 
-regression.weights.print();
+// regression.weights.print();
 
 regression.train();
 // dataColumns: ['horsepower', 'displacement', 'weight'],
-regression.predict([[215, 440, 2.16]]).print();
+regression.predict([[150, 200, 2.223]]).print();
