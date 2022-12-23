@@ -776,6 +776,13 @@ node index.js
 - Softmax : Conditional Probability Distribution (e.g. rolling a dice)
   - Considers all possible output cases together
 
+## Section 12: Image Recognition In Action
+
+### 151. Flattening Image Data
+
+- [npm mnist-data](https://www.npmjs.com/package/mnist-data)
+- 28 x 28 image data in pixel
+
 </details>
 
 ## Tips
