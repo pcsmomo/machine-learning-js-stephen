@@ -9,4 +9,12 @@ const mnistData = mnist.training(0, 10);
 
 // 28px x 28px : 784px
 const features = mnistData.images.values.map(image => _.flatMap(image));
-console.log(features);
+// console.log(features);
+// console.log(mnistData.labels.values);
+const encodedLabels = mnistData.labels.values.map(label => {
+  const row = new Array(10).fill(0);
+  row[label] = 1;
+  return row;
+});
+
+console.log(encodedLabels);
