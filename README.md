@@ -27,7 +27,9 @@ Machine Learning with Javascript by Stephen Grider
   - regressions
     - linear-regression (complete)
     - logistic-regression
-- 11-regressions
+- 11-multi-value-classifications
+  - regressions/multinominal-logistic-regression (complete)
+- 12-image-recognition
   - regressions/multinominal-logistic-regression
 - 14-loadcsv
   - loadcsv: csv loading project
