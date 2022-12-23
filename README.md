@@ -30,7 +30,9 @@ Machine Learning with Javascript by Stephen Grider
 - 11-multi-value-classifications
   - regressions/multinominal-logistic-regression (complete)
 - 12-image-recognition
-  - regressions/multinominal-logistic-regression
+  - regressions/multinominal-logistic-regressions
+- 13-performance-optimization
+  - regressions/multinominal-logistic-regressions (image-recognition complete)
 - 14-loadcsv
   - loadcsv: csv loading project
 
@@ -781,6 +783,7 @@ node index.js
 ### 151. Flattening Image Data
 
 - [npm mnist-data](https://www.npmjs.com/package/mnist-data)
+- total 60,000 images
 - 28 x 28 image data in pixel
 
 ### 154. Unchanging Accuracy
