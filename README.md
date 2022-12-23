@@ -792,10 +792,14 @@ node index.js
 
 > the accuracy is very disappointing
 
+### 155. Debugging the Calculation Process
+
+`node --inspect-brk index.js`
+
 </details>
 
 ## Tips
 
 - Node js debugging using chrome:
   - `node --inspect-brk index.js`
-  - navigate `about:inspect`
+  - navigate `about:inspect` or `chrome://inspect`
