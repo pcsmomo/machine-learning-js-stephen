@@ -796,6 +796,17 @@ node index.js
 
 `node --inspect-brk index.js`
 
+### 156. Dealing with Zero Variances
+
+#### Possible Solutions
+
+1. Remove the columns with only zeros from our feature set - they don't provide any benefit anyways
+2. Change our method of standardization/normalization to better account for possible all zero values
+
+```js
+variance.cast('bool').logicalNot().cast('float32').print();
+```
+
 </details>
 
 ## Tips
