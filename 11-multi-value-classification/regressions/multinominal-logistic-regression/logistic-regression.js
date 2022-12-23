@@ -63,8 +63,8 @@ class LogisticRegression {
     return this.processFeatures(observations)
       .matMul(this.weights)
       .sigmoid()
-      .greater(this.options.decisionBoundary);
-    // .cast('float32');  // need this for older version of tf
+      .greater(this.options.decisionBoundary)
+      .cast('float32');
   }
 
   test(testFeatures, testLabels) {
