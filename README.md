@@ -783,6 +783,15 @@ node index.js
 - [npm mnist-data](https://www.npmjs.com/package/mnist-data)
 - 28 x 28 image data in pixel
 
+### 154. Unchanging Accuracy
+
+```sh
+node index.js
+# Accuracy is 0.08
+```
+
+> the accuracy is very disappointing
+
 </details>
 
 ## Tips
