@@ -855,7 +855,10 @@ node --inspect-brk memory.js
 
 ![heap-snapshot-02](./resources/images/heap-snapshot-02.png)
 
-> The shallow size of the array is reduced from 9,108k to 850k
+> The shallow size of the array is reduced from 9,108k to 850k \
+> -> because of the Javascript Garbage Collector
+
+### 161. The Javascript Garbage Collector
 
 </details>
 
