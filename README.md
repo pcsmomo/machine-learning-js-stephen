@@ -844,6 +844,19 @@ node --inspect-brk memory.js
 
 - Chrome Inspect -> Memory -> Heap snapshot -> Take snapshot
 
+### 160. Creating Memory Snapshots
+
+#### When `return randoms;`
+
+![heap-snapshot-01-01](./resources/images/heap-snapshot-01-01.png)\
+![heap-snapshot-01-02](./resources/images/heap-snapshot-01-02.png)
+
+#### When doesn't `return randoms;`
+
+![heap-snapshot-02](./resources/images/heap-snapshot-02.png)
+
+> The shallow size of the array is reduced from 9,108k to 850k
+
 </details>
 
 ## Tips
