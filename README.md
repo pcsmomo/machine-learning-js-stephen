@@ -860,6 +860,11 @@ node --inspect-brk memory.js
 
 ### 161. The Javascript Garbage Collector
 
+### 162. Shallow vs Retained Memory Usage
+
+- Shallow memory (array): the actual memory occupied
+- Retained memory (Array): about the reference
+
 </details>
 
 ## Tips
