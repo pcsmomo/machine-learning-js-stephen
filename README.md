@@ -869,17 +869,17 @@ node --inspect-brk memory.js
 
 ### 163. Measuring Memory Usage
 
-- Before refactoring loading Data
+- Before refactoring loading Data\
   ![heap-snapshot-04](./resources/images/heap-snapshot-04.png)
 
 ### 165. Measuring Footprint Reduction
 
-- After refactoring loading Data
+- After refactoring loading Data\
   ![heap-snapshot-05](./resources/images/heap-snapshot-05.png)
 
 ### 167. Tensorflow's Eager Memory Usage
 
-- Before refactoring TensorFlow
+- Before refactoring TensorFlow with tidy\
   ![heap-snapshot-06](./resources/images/heap-snapshot-06.png)
 
 > Hmm.. there must be some changes in TensorFlow library\
@@ -889,6 +889,14 @@ node --inspect-brk memory.js
 tf.ENV.registry.webgl.backend.textData.data;
 // Can't find it in my version, "4.1.0"
 ```
+
+### 169. Implementing TF Tidy
+
+- Before refactoring TensorFlow with tidy\
+  ![heap-snapshot-07](./resources/images/heap-snapshot-07.png)
+
+> Well, there's not much difference. \
+> I guess TensorFlow already optimizes them now
 
 </details>
 

@@ -31,7 +31,7 @@ class LogisticRegression {
       .div(features.shape[0]);
     // .mul(2); // this step can be omitted because we're aiming to find slope change
 
-    this.weights = this.weights.sub(slopes.mul(this.options.learningRate));
+    return this.weights.sub(slopes.mul(this.options.learningRate));
   }
 
   train() {
@@ -44,14 +44,19 @@ class LogisticRegression {
         const { batchSize } = this.options;
         const startIndex = j * batchSize;
 
-        const featureSlice = this.features.slice(
-          [startIndex, 0],
-          [batchSize, -1]
-        );
+        this.weights = tf.tidy(() => {
+          const featureSlice = this.features.slice(
+            [startIndex, 0],
+            [batchSize, -1]
+          );
 
-        const labelSlice = this.labels.slice([startIndex, 0], [batchSize, -1]);
+          const labelSlice = this.labels.slice(
+            [startIndex, 0],
+            [batchSize, -1]
+          );
 
-        this.gradientDescent(featureSlice, labelSlice);
+          return this.gradientDescent(featureSlice, labelSlice);
+        });
       }
 
       this.recordCost();
