@@ -817,6 +817,25 @@ node index.js
 # Accuracy is 0.88
 ```
 
+## Section 13: Performance Optimization
+
+### c58. Handing Large Datasets
+
+```sh
+node index.js
+# Accuracy is 0.867
+
+# if it reaches the heap size limit
+node --max-old-space-size=4096 index.js
+node
+> v8.getHeapStatistics()
+{
+  ...,
+  heap_size_limit: 4345298944,
+  ...
+}
+```
+
 </details>
 
 ## Tips
