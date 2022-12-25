@@ -872,6 +872,11 @@ node --inspect-brk memory.js
 - Before refactoring
   ![heap-snapshot-04](./resources/images/heap-snapshot-04.png)
 
+### 165. Measuring Footprint Reduction
+
+- After refactoring
+  ![heap-snapshot-05](./resources/images/heap-snapshot-05.png)
+
 </details>
 
 ## Tips
