@@ -836,6 +836,14 @@ node
 }
 ```
 
+### 159. Minimizing Memory Usage
+
+```sh
+node --inspect-brk memory.js
+```
+
+- Chrome Inspect -> Memory -> Heap snapshot -> Take snapshot
+
 </details>
 
 ## Tips
