@@ -7,7 +7,7 @@ const LogisticRegression = require('./logistic-regression');
 // wrap the logic in the function,
 // so the garbage collector can retrive so much memory
 function loadData() {
-  const mnistData = mnist.training(0, 20000);
+  const mnistData = mnist.training(0, 60000);
   // console.log(mnistData.images.values);
 
   // 28px x 28px : 784px
@@ -33,6 +33,7 @@ const regression = new LogisticRegression(features, labels, {
 });
 
 regression.train();
+debugger;
 
 const testMnistData = mnist.testing(0, 1000);
 // console.log(testMnistData);

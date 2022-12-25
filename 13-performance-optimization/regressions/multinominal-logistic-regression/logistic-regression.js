@@ -53,7 +53,7 @@ class LogisticRegression {
 
         this.gradientDescent(featureSlice, labelSlice);
       }
-      debugger;
+
       this.recordCost();
       this.updateLearningRate();
     }
@@ -77,7 +77,6 @@ class LogisticRegression {
 
   processFeatures(features) {
     features = tf.tensor(features);
-    debugger;
     if (this.mean && this.variance) {
       features = features.sub(this.mean).div(this.variance.pow(0.5));
     } else {

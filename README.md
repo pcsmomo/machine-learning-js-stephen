@@ -869,13 +869,26 @@ node --inspect-brk memory.js
 
 ### 163. Measuring Memory Usage
 
-- Before refactoring
+- Before refactoring loading Data
   ![heap-snapshot-04](./resources/images/heap-snapshot-04.png)
 
 ### 165. Measuring Footprint Reduction
 
-- After refactoring
+- After refactoring loading Data
   ![heap-snapshot-05](./resources/images/heap-snapshot-05.png)
+
+### 167. Tensorflow's Eager Memory Usage
+
+- Before refactoring TensorFlow
+  ![heap-snapshot-06](./resources/images/heap-snapshot-06.png)
+
+> Hmm.. there must be some changes in TensorFlow library\
+> Tensor doesn't use too much memory which is different against the lecture
+
+```js
+tf.ENV.registry.webgl.backend.textData.data;
+// Can't find it in my version, "4.1.0"
+```
 
 </details>
 
