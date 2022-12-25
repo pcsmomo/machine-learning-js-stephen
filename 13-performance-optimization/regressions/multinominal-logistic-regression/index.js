@@ -4,22 +4,29 @@ const _ = require('lodash');
 const mnist = require('mnist-data');
 const LogisticRegression = require('./logistic-regression');
 
-const mnistData = mnist.training(0, 20000);
+// wrap the logic in the function,
+// so the garbage collector can retrive so much memory
+function loadData() {
+  const mnistData = mnist.training(0, 20000);
+  // console.log(mnistData.images.values);
 
-// console.log(mnistData.images.values);
+  // 28px x 28px : 784px
+  const features = mnistData.images.values.map(image => _.flatMap(image));
+  // console.log(features);
+  // console.log(mnistData.labels.values);
+  const encodedLabels = mnistData.labels.values.map(label => {
+    const row = new Array(10).fill(0);
+    row[label] = 1;
+    return row;
+  });
+  // console.log(encodedLabels);
 
-// 28px x 28px : 784px
-const features = mnistData.images.values.map(image => _.flatMap(image));
-// console.log(features);
-// console.log(mnistData.labels.values);
-const encodedLabels = mnistData.labels.values.map(label => {
-  const row = new Array(10).fill(0);
-  row[label] = 1;
-  return row;
-});
-// console.log(encodedLabels);
+  return { features, labels: encodedLabels };
+}
 
-const regression = new LogisticRegression(features, encodedLabels, {
+const { features, labels } = loadData();
+
+const regression = new LogisticRegression(features, labels, {
   learningRate: 1,
   iterations: 20,
   batchSize: 100
