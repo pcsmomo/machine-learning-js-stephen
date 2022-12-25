@@ -865,6 +865,13 @@ node --inspect-brk memory.js
 - Shallow memory (array): the actual memory occupied
 - Retained memory (Array): about the reference
 
+![heap-snapshot-03](./resources/images/heap-snapshot-03.png)
+
+### 163. Measuring Memory Usage
+
+- Before refactoring
+  ![heap-snapshot-04](./resources/images/heap-snapshot-04.png)
+
 </details>
 
 ## Tips
