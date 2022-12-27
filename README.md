@@ -898,6 +898,13 @@ tf.ENV.registry.webgl.backend.textData.data;
 > Well, there's not much difference. \
 > I guess TensorFlow already optimizes them now
 
+### 178. Improving Model Accuracy
+
+```sh
+node index.js
+# Accuracy is 0.9257
+```
+
 </details>
 
 ## Tips
